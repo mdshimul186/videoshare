@@ -1,0 +1,106 @@
+.AllUsersTable {
+  width: 1120px;
+  height: 92px;
+  border-bottom: 1.5px solid #dfe0eb;
+}
+.userName {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.3px;
+  color: #252733;
+  margin-left: 10px;
+}
+.userinfo {
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 36px;
+  margin-bottom: 34px;
+  width: 398px;
+  height: 22px;
+}
+.userAvatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.role {
+  margin-left: 40px;
+  width: 120px;
+  height: 24px;
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+.branding {
+  width: 98px;
+  height: 24px;
+  margin-left: 150px;
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+.action {
+  margin-left: auto;
+  width: 10px;
+  height: 20px;
+  text-align: right;
+  margin-top: 38px;
+  margin-bottom: 34px;
+  margin-right: 15px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+
+  /* identical to box height, or 143% */
+  text-align: right;
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+  color: #4b506d;
+}
+
+.userRole {
+  text-align: center;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+}
+
+.userBranding {
+  text-align: center;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+}
+
+.LoadingText {
+  margin-left: 31px;
+}
+.NoScriptText {
+  margin-left: 31px;
+}

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Mulish";
+    src: local("Muli"), url(/fonts/Muli.ttf) format("truetype");
+}
+.newScriptTextEditorContent{
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    color: #C5C7CD;
+    z-index: 1;
+  }

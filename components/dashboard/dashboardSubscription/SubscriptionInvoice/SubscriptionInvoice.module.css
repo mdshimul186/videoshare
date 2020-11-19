@@ -1,0 +1,265 @@
+.SubscriptionInvoiceModuleWrapper {
+  width: 1122px;
+  height: 822px;
+  margin-left: 30px;
+  margin-right: 33px;
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+}
+.invoiceLeftSection {
+  flex-basis: 50%;
+  border-right: 1px solid #dfe0eb;
+}
+.invoiceRightSection {
+  flex-basis: 50%;
+}
+.leftContentDetails {
+}
+
+.rowInvoiceDetailsInput {
+  width: 100%;
+  height: 42px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  letter-spacing: 0.3px;
+  /* grayscale / gray dark */
+  background: #f8f8f8;
+  opacity: 1;
+  outline: none;
+  border: 1px solid #f0f1f7;
+  padding-left: 15px;
+  border-radius: 8px;
+}
+.rowInvoiceDetailsInput::placeholder {
+  color: #d0d0d1;
+}
+.rowInvoiceDetailsInputActive {
+  width: 100%;
+  height: 42px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  letter-spacing: 0.3px;
+  /* grayscale / gray dark */
+  background-color: #f8f8f8;
+  outline: none;
+  border: 1px solid #0182fe;
+  padding-left: 15px;
+  border-radius: 8px;
+}
+.hidden {
+  display: none;
+}
+.invoiceDetailsText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #48506d;
+  width: 400px;
+  height: 24px;
+  margin-left: 32px;
+  margin-top: 32px;
+}
+
+.rowInvoiceDetails {
+  margin-left: 32px;
+  margin-right: 32px;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.rowInvoiceDetailsMarginTop {
+  margin-top: 21px;
+}
+.rowInvoiceDetailsContent {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.rowInvoiceDetailsInputBox {
+  width: 70%;
+  height: 42px;
+  /* grayscale / extra light */
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.rowInvoiceDetailsInputLabel {
+  /* Bold 12 (0.3 px, CAPS) */
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+}
+.rowInvoiceDetailsInputLabelactive {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #007aff;
+}
+
+.invoiceSelectPlanContent {
+  margin-top: 32px;
+  width: 90%;
+  border-top: 1px solid #dfe0eb;
+  border-bottom: 1px solid #dfe0eb;
+  height: 100px;
+}
+.invoiceSelectplanItems {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.subscriptionStatusImage {
+  width: 48px;
+  height: 48px;
+}
+.invoicePlanInfo {
+  /* position: relative; */
+}
+
+.subscriptionStatus {
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+}
+
+.subscriptionPaymentPlanWrapper {
+  margin-top: 3px;
+  margin-left: 16px;
+  width: 100px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+}
+.subscriptionPlanName {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1px;
+  /* grayscale / gray */
+  color: #9fa2b4;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.subscriptionPlanPrice {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 22px;
+  /* identical to box height, or 137% */
+  letter-spacing: 0.2px;
+  /* grayscale / black */
+  color: #252733;
+  margin-top: 4px;
+}
+
+.subscriptionStatusImage {
+  width: 48px;
+  height: 48px;
+}
+
+.invoicePalnButtonActive,
+.invoicePalnButton:hover {
+  /* grayscale / divider */
+
+  border: 0.5px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  /* grayscale / gray */
+  justify-content: center;
+  background: #0182fe;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+.invoicePalnButton {
+  background: #ffffff;
+  /* grayscale / divider */
+
+  border: 0.5px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  /* grayscale / gray */
+
+  color: #9fa2b4;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.invoicePlanButtonSize {
+  width: 96px;
+  height: 32px;
+}
+.rowInvoiceReceiverEmail {
+  margin-top: 90px;
+}
+.fullwidth {
+  width: 85%;
+}
+.slectCustomWidth {
+  width: 78%;
+}
+.slectOptionCountry {
+  /* border-radius: 10px;
+  border: 1px solid #666;
+  outline: none; */
+}

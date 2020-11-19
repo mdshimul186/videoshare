@@ -1,0 +1,83 @@
+.Container {
+	width: 1022px;
+	height: 204px;
+	background: #6b7587;
+	border-radius: 8px;
+	display: flex;
+	margin-bottom: 25px;
+}
+.Content {
+	margin-top: 15px;
+	margin-bottom: 14px;
+	margin-left: 184px;
+	margin-right: 184px;
+	width: 100%;
+	height: 175px;
+	display: flex;
+	flex-direction: column;
+}
+
+.recordButton {
+	width: 53px;
+	height: 53px;
+	background-color: transparent;
+	border: none;
+	background-image: url("/greenRecordButton.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 0px;
+	margin-bottom: 7px;
+	outline: none;
+}
+.stopButton {
+	width: 53px;
+	height: 53px;
+	background-color: transparent;
+	border: none;
+	background-image: url("/stopRecord.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: 173px;
+	margin-right: 173px;
+	margin-top: 0px;
+	margin-bottom: 7px;
+	outline: none;
+}
+.startSpeakingText {
+	font-family: "SF Pro Text";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+	margin-top: 0;
+	margin-bottom: 0;
+	align-self: center;
+}
+.voiceWaveWrapper {
+	width: 100%;
+	height: 47.22px;
+	display: flex;
+	justify-content: center;
+}
+.recordTime {
+	align-self: center;
+	width: 66px;
+	height: 18px;
+	margin-top: 10px;
+	font-family: "SF Pro Text";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 18px;
+	color: #ffffff;
+}
+.wave {
+	display: flex;
+}
+.buttonWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

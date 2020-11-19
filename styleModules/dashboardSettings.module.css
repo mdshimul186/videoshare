@@ -1,0 +1,201 @@
+.DashboardSettingsContainer {
+  width: 1122px;
+  height: 646px;
+  border-style: solid;
+  margin-left: 30px;
+  margin-top: 24px;
+  margin-right: 33px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  /* grayscale / divider */
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.DashboardSettingsText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #252733;
+  width: 400px;
+  height: 24px;
+  margin-left: 32px;
+  margin-top: 32px;
+}
+.DashboardInputLabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+
+  /* grayscale / gray */
+
+  color: #9fa2b4;
+}
+
+.dashboardBrandingThumbnail {
+  width: 191px;
+  height: 133px;
+}
+
+.brandingUploadLogoBtn {
+  border: 1px solid #0182fe;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 174px;
+  height: 40px;
+  margin-top: 89px;
+  margin-left: 21px;
+  background-color: white;
+  outline: none;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  /* Logo Blue */
+
+  color: #0182fe;
+}
+
+.brandingUploadLogoBtnPlus{
+/* green / default */
+background: #27AE60;
+box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+border-radius: 8px;
+height: 128px;
+width: 27px;
+border:none;
+outline: none;
+color: white;
+}
+.brandingTextBoxes {
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 512px;
+  height: 42px;
+  /* Reg 14 (0.3 px) */
+
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+  opacity: 0.4;
+  text-indent: 16px;
+  outline: none;
+}
+.brandingTextBoxesVisible {
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 512px;
+  height: 42px;
+  /* Reg 14 (0.3 px) */
+
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+  opacity: 1;
+  text-indent: 16px;
+  color: black;
+  outline: none;
+}
+.primaryColourButton {
+  background: #0182fe;
+  box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+  border-radius: 7px;
+  height: 40px;
+  width: 40px;
+  outline: none;
+  border-style: none;
+  color: white;
+}
+
+.secondaryColourButton {
+  height: 40px;
+  width: 40px;
+  background: #f2994a;
+  box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+  border-radius: 7px;
+  outline: none;
+  border-style: none;
+  color: white;
+}
+
+.textColourButton {
+  outline: none;
+  border-style: none;
+  color: white;
+  height: 40px;
+  width: 40px;
+  background: #252733;
+  box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+  border-radius: 7px;
+}
+.dashboardBrandingRow {
+  display: flex;
+  flex-direction: row;
+}
+.dashboardBrandingCol {
+  display: flex;
+  flex-direction: column;
+}
+.brandingTextBoxAndButtons {
+  margin-top: 35px;
+}
+.brandingSettingsSaveBTN {
+  background: #afebc8;
+  /* gn accent default */
+
+  box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+  border-radius: 8px;
+  width: 82px;
+  height: 40px;
+  outline: none;
+  border: none;
+  float: right;
+  margin-left: 1008px;
+  margin-top: 68px;
+  color: white;
+}
+.DashboardBrandingSettingsContentWrapper {
+  margin: 32px;
+}
+.brandingInputGroup {
+  width: 512px;
+  height: 64px;
+  margin-right: 32px;
+}

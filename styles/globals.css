@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #363740;
+  font-family: "Mulish", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #c4c4c4;
+  outline: 1px solid slategrey;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("Lato"), url(/fonts/SFPRO.otf) format("opentype");
+}
+/* @font-face {
+  font-family: "Mulish";
+  src: local("Muli"), url(/fonts/Muli.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Mulish";
+  src: local("Muli"), url(/fonts/Muli-Bold.ttf) format("truetype");
+} */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.newScriptTextEditorContent {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #c5c7cd;
+}
+input {
+  outline: none;
+}
+.indexBody {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.indexHeroImage {
+  width: 300px;
+  margin-bottom: 20px;
+}
+.indexContent {
+  width: 70%;
+  height: 250px;
+  align-items: center;
+  text-align: center;
+}
+.indexButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.indexButtonsWrapper button {
+  width: 250px;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #0182fe;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+::placeholder {
+  font-weight: bold;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-weight: bold;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-weight: bold;
+}

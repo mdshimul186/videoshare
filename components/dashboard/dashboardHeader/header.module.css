@@ -1,0 +1,66 @@
+.dashboardHeader {
+  width: 1122px;
+  height: 44px;
+  margin-left: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  align-content: center;
+}
+.settingText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  width: 771px;
+  /* grayscale / black */
+
+  color: #252733;
+}
+.dashboardSearch {
+  margin-left: 64px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.dashboardNotification {
+  margin-left: 24px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  width: 16px;
+}
+.dashboardDivider {
+  border: 1px solid #dfe0eb;
+  height: 32px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 32px;
+}
+
+.dashboardUsername {
+  margin-left: 32px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  color: #252733;
+  height: 18px;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+.dashboardUserWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dashboardAvatar {
+  border-radius: 80px;
+  width: 50px;
+}

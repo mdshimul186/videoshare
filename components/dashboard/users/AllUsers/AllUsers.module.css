@@ -1,0 +1,334 @@
+.usersTableContainer {
+  margin-top: 15px;
+}
+.allUsers {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  /* identical to box height */
+  margin-top: 32px;
+  letter-spacing: 0.4px;
+
+  /* grayscale / black */
+
+  color: #252733;
+  width: 400px;
+  height: 24px;
+  margin-left: 32px;
+}
+.allUsersWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.inputWithSearchGroup {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 314px;
+  width: 224px;
+  height: 40px;
+  /* grayscale / extra light */
+
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.searchIcon {
+  height: 15px;
+  width: 15px;
+  z-index: 9999;
+  margin-left: 24px;
+  margin-top: 12px;
+  margin-bottom: 13px;
+  position: absolute;
+  cursor: pointer;
+}
+.usersSearchInput {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 56px;
+  margin-right: 24px;
+  width: 224px;
+  height: 20px;
+  /* grayscale / extra light */
+
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  outline: none;
+
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+  opacity: 0.4;
+}
+.newUserButton {
+  width: 122px;
+  height: 40px;
+  border-radius: 8px;
+  text-align: center;
+  background: #0182fe;
+  color: white;
+  border: none;
+  margin-top: 25px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+.AllUsersTable {
+  width: 1120px;
+  height: 30px;
+  border-bottom: 1.5px solid #dfe0eb;
+}
+.AllUsersTableName {
+  margin-left: 31px;
+  margin-bottom: 12px;
+  width: 252px;
+  height: 18px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-top: 0px;
+}
+.AllUsersTableRole {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  width: 92px;
+  height: 18px;
+  margin-bottom: 12px;
+  margin-left: 186px;
+  margin-top: 0px;
+  text-align: center;
+}
+.AllUsersTableBranding {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-bottom: 12px;
+  margin-left: 165px;
+  width: 92px;
+  height: 18px;
+  margin-top: 0px;
+  text-align: center;
+}
+.AllUsersTableAction {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-left: 103px;
+  text-align: right;
+  width: 224px;
+  height: 18px;
+  margin-top: 0px;
+}
+.usersDivider {
+  margin: 0px;
+}
+.AllUsersPaginationContainer {
+  position: relative;
+  width: 371px;
+  height: 24px;
+  margin-left: 719px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+  top: 10px;
+}
+.rowsPerPage {
+  width: 160px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.paginator {
+  width: 184px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+}
+.rowsPerPageText {
+  margin: 0;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #9fa2b4;
+}
+.rowsPerPageValue {
+  margin-top: 1px;
+  margin-left: 8px;
+  width: 10px;
+  height: 18px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+}
+.paginationdropdown {
+  margin-top: 5px;
+  margin-right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+.prevUsersButton {
+  background-image: url("/pageleftarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.nextUsersButton {
+  background-image: url("/pagerightarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 24px;
+  width: 24px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.DropdownWrapper {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-top: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("/pagedropdown.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 3px;
+  width: 28px;
+  margin-left: 3px;
+}
+.DropdownOptions {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+}
+
+.dashboardUsersContent {
+  width: 1185px;
+  height: 1100px;
+  background-color: #f7f8fc;
+  display: flex;
+  flex-direction: column;
+}
+.dashboardHeader {
+  width: 1122px;
+  height: 44px;
+  margin-left: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  align-content: center;
+}
+.settingText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  width: 771px;
+  /* grayscale / black */
+
+  color: #252733;
+}
+.dashboardSearch {
+  margin-left: 64px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.dashboardNotification {
+  margin-left: 24px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.dashboardUsername {
+  margin-left: 32px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  color: #252733;
+  width: 109px;
+  height: 18px;
+}
+.dashboardDivider {
+  border: 1px solid #dfe0eb;
+  height: 32px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 32px;
+}
+.contentUsers {
+  margin-top: 54px;
+  margin-left: 28px;
+  margin-right: 35px;
+  margin-bottom: 30px;
+  height: 962px;
+  width: 1122px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfe0eb;
+}

@@ -1,0 +1,15 @@
+.pagination{
+    width: 100px;
+    height: 18px;
+    text-align: right;
+    margin-top: 0;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 0.3px;
+    color: #9FA2B4;
+    margin-right: 24px;
+}

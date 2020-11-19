@@ -1,0 +1,122 @@
+.VideoItems {
+  width: 335px;
+  height: 245px;
+  margin-right: 17px;
+  /* border-style: solid; */
+  margin-bottom: 12px;
+}
+.VideoItems:nth-child(3n) {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.VideoWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex: 0 0 50%;
+  width: 100%;
+}
+.videoThumbnail {
+  position: relative;
+}
+.thumbnailImage {
+  border-radius: 9px;
+  height: 187px;
+  width: 335px;
+  object-fit: cover;
+}
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.progressbar {
+  background: #c4c4c4;
+  border-radius: 10px;
+  width: 315px;
+  height: 8px;
+  position: absolute;
+  left: 10px;
+  bottom: 13px;
+}
+.progress {
+  background: #0182fe;
+  border-radius: 10px;
+  height: 8px;
+  width: 70%;
+}
+.videContent {
+  display: flex;
+  margin-top: 10px;
+}
+.column1 {
+  width: 220px;
+}
+.videoTitle {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 171%;
+  /* identical to box height, or 21px */
+
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+
+  /* grayscale / black */
+
+  color: #252733;
+}
+.videoDescription {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+}
+.column2 {
+  width: 100px;
+}
+.videoDuration {
+  width: 63px;
+  height: 19px;
+  border-radius: 6px;
+  background: #4f4f4f;
+  margin-left: 13px;
+  margin-bottom: 5px;
+}
+.videoDurationContent {
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+.videoCreatedAt {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1px;
+  color: #0182fe;
+  margin: 0;
+}

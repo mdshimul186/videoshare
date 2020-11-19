@@ -1,0 +1,1141 @@
+.allScripts {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  /* identical to box height */
+  margin-top: 32px;
+  letter-spacing: 0.4px;
+
+  /* grayscale / black */
+
+  color: #252733;
+  width: 400px;
+  height: 24px;
+  margin-left: 32px;
+}
+.allScriptsWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.inputWithSearchGroup {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 314px;
+  width: 224px;
+  height: 40px;
+  /* grayscale / extra light */
+
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.searchIcon {
+  height: 15px;
+  width: 15px;
+  z-index: 9999;
+  margin-left: 24px;
+  margin-top: 12px;
+  margin-bottom: 13px;
+  position: absolute;
+  cursor: pointer;
+}
+.scriptSearchInput {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 56px;
+  margin-right: 24px;
+  width: 224px;
+  height: 20px;
+  /* grayscale / extra light */
+
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  outline: none;
+
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  letter-spacing: 0.3px;
+
+  /* grayscale / gray dark */
+
+  color: #4b506d;
+  opacity: 0.4;
+}
+.scriptButton {
+  margin-left: 24px;
+  background: #0182fe;
+  box-shadow: 0px 4px 12px rgba(1, 130, 254, 0.24);
+  border-radius: 8px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  width: 126px;
+  height: 40px;
+  margin-top: 24px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.scriptTableContainer {
+  margin-top: 40px;
+  width: 1120px;
+  height: 814px;
+}
+.backToScriptDashboardText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 137% */
+
+  letter-spacing: 0.2px;
+
+  /* accent / default */
+  width: 741px;
+  height: 21px;
+  margin-left: 6px;
+  color: #0182fe;
+}
+.blueLeftArrow {
+  position: relative;
+  z-index: 99;
+  margin-top: 10px;
+}
+.backToScriptDashboardWrapper {
+  display: flex;
+  cursor: pointer;
+}
+.AllScriptTable {
+  width: 1120px;
+  height: 30px;
+  border-bottom: 1.5px solid #dfe0eb;
+}
+.AllScriptTableTitle {
+  margin-left: 31px;
+  margin-bottom: 12px;
+  width: 252px;
+  height: 18px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-top: 0px;
+}
+.AllScriptTableStatus {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  width: 92px;
+  height: 18px;
+  margin-bottom: 12px;
+  margin-left: 186px;
+  margin-top: 0px;
+}
+.AllScriptTableScriptType {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-bottom: 12px;
+  margin-left: 109px;
+  width: 92px;
+  height: 18px;
+  margin-top: 0px;
+}
+.AllScriptTableDate {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-left: 103px;
+  text-align: right;
+  width: 224px;
+  height: 18px;
+  margin-top: 0px;
+}
+.scriptDivider {
+  margin: 0px;
+}
+.AllScriptPaginationContainer {
+  position: relative;
+  width: 371px;
+  height: 24px;
+  margin-left: 719px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+  top: 10px;
+}
+.rowsPerPage {
+  width: 160px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.paginator {
+  width: 184px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+}
+.rowsPerPageText {
+  margin: 0;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #9fa2b4;
+}
+.rowsPerPageValue {
+  margin-top: 1px;
+  margin-left: 8px;
+  width: 10px;
+  height: 18px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+}
+.paginationdropdown {
+  margin-top: 5px;
+  margin-right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+.prevScriptButton {
+  background-image: url("/pageleftarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.nextScriptButton {
+  background-image: url("/pagerightarrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 24px;
+  width: 24px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.DropdownWrapper {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-top: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("/pagedropdown.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 3px;
+  width: 28px;
+  margin-left: 3px;
+}
+.DropdownOptions {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+}
+.newScriptWrapper {
+  width: 1122px;
+  height: 878px;
+  margin-left: 30px;
+  margin-right: 33px;
+  margin-bottom: 30px;
+  margin-top: 54px;
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.newScript {
+  width: 831px;
+  height: 776px;
+  margin-top: 37px;
+  margin-left: 32px;
+  margin-bottom: 121px;
+  display: flex;
+  flex-direction: column;
+}
+.newScriptTitleGroup {
+  width: 767px;
+  height: 24px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 48px;
+}
+.newSummaryTitleGroup {
+  width: 767px;
+  height: 24px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+.newTemplateTitleGroup {
+  width: 767px;
+  height: 24px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 32px;
+}
+.newScriptMain {
+  width: 831px;
+  height: 720px;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.newTemplateScriptMain {
+  width: 831px;
+  height: 720px;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.newScriptRight {
+  width: 200px;
+  height: 776px;
+  margin-left: 27px;
+  margin-top: 38px;
+}
+.newScriptGroup {
+  width: 767px;
+  height: 84px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 48px;
+}
+.newScriptTextEditor {
+  width: 767px;
+  height: 473px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 4px;
+}
+.newScriptTextEditorWithMic {
+  width: 767px;
+  height: 270px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 4px;
+}
+.newScriptTitle {
+  margin-top: 0;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #252733;
+  width: 767px;
+  height: 24px;
+}
+.newScriptTitles {
+  margin-top: 57px;
+}
+.newScriptSelect {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  margin-top: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("/tripledot.svg");
+  background-repeat: no-repeat;
+  width: 300px;
+}
+.newScriptSelectOptions * {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  height: 46px;
+  width: 400px;
+  border-radius: 4px;
+  background-color: turquoise;
+}
+.scriptTitleInputGroup {
+  width: 318px;
+  height: 64px;
+}
+.scriptTitleInput {
+  background: #fcfdfe;
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  opacity: 0.4;
+  width: 318px;
+  height: 42px;
+  margin-top: 22px;
+  outline: none;
+  text-indent: 16px;
+}
+.scriptRecord {
+  margin-left: 16px;
+  margin-top: 22px;
+}
+.saveAsDraft {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  margin-left: 211px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.recordDuration {
+  background: #fec400;
+  border-radius: 100px;
+  width: 76px;
+  height: 24px;
+  margin-top: 42px;
+  margin-left: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scriptVerticalLine {
+  margin-left: 15.69px;
+  margin-top: 22px;
+}
+.newScriptRecordVideo {
+  background: #eb5757;
+  box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+  border-radius: 8px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-top: 16px;
+  margin-left: 601px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.scriptRecordDurationText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 76px;
+  height: 24px;
+}
+.newScriptImportBTN {
+  background: #0182fe;
+  box-shadow: 0px 4px 12px rgba(1, 130, 254, 0.24);
+  border-radius: 8px;
+  width: 200px;
+  height: 48px;
+  outline: none;
+  border: none;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+.newScriptBrandingText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4b506d;
+  margin-top: 24px;
+}
+.newScriptIntro {
+  background: #27ae60;
+  border-radius: 100px;
+  width: 97px;
+  height: 32px;
+  border: none;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  outline: none;
+  color: #ffffff;
+}
+.newScriptOutro {
+  margin-left: 9px;
+  width: 94px;
+  height: 32px;
+  background: #f0f1f7;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+.newScriptWatermark {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 32px;
+  margin-top: 11px;
+  background: #f0f1f7;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+}
+/* 
+.react-select__indicator svg {
+	display: none;
+} */
+.react-select-container {
+  margin: 0;
+}
+.allScriptSelect {
+  position: relative;
+  bottom: 25px;
+  right: 15px;
+}
+.newTemplateText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+
+  /* grayscale / gray */
+
+  color: #9fa2b4;
+  margin-bottom: 6px;
+}
+.newTemplateInput {
+  background: #fcfdfe;
+  margin-top: 0;
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  opacity: 0.4;
+  width: 318px;
+  height: 42px;
+  text-indent: 16px;
+  outline: none;
+}
+.NewTemplateOpeningSaveWrapper {
+  width: 769px;
+  margin-left: 32px;
+  margin-right: 30px;
+  margin-top: 17px;
+}
+.newTemplateOpening {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+  width: 255px;
+  height: 16px;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.newTemplateMiddle {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+  margin-left: 32px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.newTemplateCallToAction {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+  margin-left: 32px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.newTemplateDraft {
+  margin-left: 422px;
+  width: 92px;
+  height: 20px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.newTemplateTextEditor {
+  width: 769px;
+  height: 149px;
+  margin-left: 32px;
+  margin-right: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.newTemplateRecordVideo {
+  background: #eb5757;
+  box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+  border-radius: 8px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-top: 16px;
+  margin-left: 601px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.templateEditors {
+  overflow: scroll;
+  max-height: 490px;
+}
+.newSummaryInputGroup {
+  width: 318px;
+  height: 64px;
+  margin-left: 32px;
+  margin-top: 48px;
+}
+.newSummaryName {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.newSummaryInput {
+  background: #fcfdfe;
+  border: 1px solid #f0f1f7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 318px;
+  height: 42px;
+  text-indent: 16px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  opacity: 0.4;
+  margin-top: 6px;
+  outline: none;
+}
+.newSummaryDuration {
+  width: 76px;
+  height: 24px;
+  background: #fec400;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 18px;
+  margin-top: 80px;
+}
+.newSummaryContent {
+  width: 769px;
+  height: 280px;
+}
+.newSummaryDraft {
+  margin-top: 105px;
+  margin-left: 263px;
+  white-space: nowrap;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #9fa2b4;
+}
+.summaryPoints {
+  width: 769px;
+  height: 142px;
+  margin-left: 32px;
+  margin-right: 30px;
+  margin-top: 0;
+  margin-bottom: 13px;
+}
+.summaryPointText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+  width: 63px;
+  height: 16px;
+}
+.summaryPointsInputGroup {
+  display: flex;
+}
+.summaryPointInput {
+  width: 706px;
+  height: 40px;
+  background: #fcfdfe;
+  border: 1px solid #ebedf0;
+  box-sizing: border-box;
+  border-radius: 12px;
+  text-indent: 16px;
+  outline: none;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #c5c7cd;
+}
+.summaryPointInput::placeholder {
+  color: #c5c7cd;
+}
+.summaryInputMargin {
+  margin-top: 16px;
+}
+.summaryPlusButton {
+  background: #27ae60;
+  box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+  border-radius: 8px;
+  width: 27px;
+  height: 27px;
+  color: white;
+  border: none;
+  margin-left: 774px;
+  margin-top: 13px;
+  outline: none;
+}
+.newScriptActiveIcon {
+  margin-left: 8px;
+}
+.newScriptInactiveIcon {
+  margin: 8px;
+}
+.newScriptSideWatermarkText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #4b506d;
+  width: 158px;
+  height: 16px;
+  justify-content: center;
+}
+.newScriptSideIntroText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  width: 53px;
+  height: 16px;
+}
+.newScriptSideOutroText {
+  margin-left: 12px;
+  width: 50px;
+  height: 16px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #4b506d;
+}
+.newScriptTitleLabel {
+  margin-bottom: 6px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4b506d;
+}
+.newScriptLowerThird {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  white-space: nowrap;
+  width: 71px;
+  height: 16px;
+  margin-left: 4px;
+}
+.newScriptLowerThirdBtn {
+  width: 115px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: #27ae60;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+}
+.newScriptNameInput {
+  margin-top: 17px;
+  width: 200px;
+  height: 42px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  opacity: 0.4;
+  text-indent: 16px;
+}
+.newScriptAgeInput {
+  margin-top: 22px;
+  width: 200px;
+  height: 42px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #4b506d;
+  text-indent: 16px;
+  opacity: 0.4;
+}
+.newScriptThemeText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4b506d;
+  margin-top: 63px;
+  margin-bottom: 0;
+}
+.newScriptThemeBTN {
+  background: linear-gradient(262.82deg, #bd30ff 0%, #ed2e54 100%);
+  border-radius: 8px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-family: "SF Pro Text";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+.newScriptLandingPageText {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4b506d;
+  margin-top: 27px;
+}
+.newScriptLandingPageBTN {
+  background: #27ae60;
+  border-radius: 100px;
+  width: 97px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  outline: none;
+  margin-top: 6px;
+}
+.newScriptLandingYes {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  margin-left: 20px;
+  color: #ffffff;
+}
+.newScriptPreviewText {
+  margin-top: 43px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4b506d;
+}
+.newScriptPreviewVideo {
+  width: 200px;
+  height: 105px;
+  border-radius: 10px;
+  border-style: solid;
+  border: 1px;
+  cursor: pointer;
+}
+.newScriptDivider1 {
+  position: relative;
+  border: 1px solid #dfe0eb;
+  width: 259px;
+  z-index: 10;
+  top: 200px;
+  right: 30px;
+}
+.newScriptDivider2 {
+  position: relative;
+  border: 1px solid #dfe0eb;
+  width: 259px;
+  z-index: 10;
+  top: 454px;
+  right: 30px;
+}
+.dashboardScriptsContent {
+  width: 1185px;
+  height: 1100px;
+  background-color: #f7f8fc;
+  display: flex;
+  flex-direction: column;
+}
+.dashboardHeader {
+  width: 1122px;
+  height: 44px;
+  margin-left: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  align-content: center;
+}
+.settingText {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  width: 771px;
+  /* grayscale / black */
+
+  color: #252733;
+}
+.dashboardSearch {
+  margin-left: 64px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.dashboardNotification {
+  margin-left: 24px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.dashboardUsername {
+  margin-left: 32px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  color: #252733;
+  width: 109px;
+  height: 18px;
+}
+.dashboardDivider {
+  border: 1px solid #dfe0eb;
+  height: 32px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 32px;
+}
+.contentScripts {
+  margin-top: 54px;
+  margin-left: 28px;
+  margin-right: 35px;
+  margin-bottom: 30px;
+  height: 962px;
+  width: 1122px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfe0eb;
+}

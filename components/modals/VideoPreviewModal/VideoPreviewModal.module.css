@@ -1,0 +1,40 @@
+.Modal {
+  width: 464px;
+  height: 297px;
+  margin-left: 548px;
+  margin-top: 210px;
+  outline: none;
+  border: none;
+  background: #FFFFFF;
+  border: 0.5px solid #DFE0EB;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+.Overlay {
+  background: #4b506d;
+  opacity: 0.6;
+}
+.closeButton {
+  width: 24px;
+  height: 24px;
+  background-image: url("/closeButton.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: white;
+  outline: none;
+  position: relative;
+  left: 400px;
+  bottom:35px;
+  cursor: pointer;
+}
+.content{
+    position: absolute;
+    width: 391px;
+    height: 218.26px;
+    margin-top:39px;
+    margin-bottom: 39.74px;
+    margin-left: 30px;
+    margin-right: 43px;
+}

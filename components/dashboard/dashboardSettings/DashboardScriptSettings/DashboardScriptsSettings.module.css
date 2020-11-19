@@ -1,0 +1,1235 @@
+@media screen and (min-width: 640px) {
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    width: 512px;
+    height: 572px;
+  }
+  .dashboardScripts {
+    width: 1058px;
+    height: 574px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 39px;
+    margin-bottom: 33px;
+  }
+  .marginRight34 {
+    margin-right: 34px;
+  }
+  .DashboardScriptsText {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: #656565;
+    width: 400px;
+    height: 24px;
+    margin-left: 32px;
+    margin-top: 0px;
+  }
+  .DashboardScriptsText1 {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: #656565;
+    width: 400px;
+    height: 24px;
+    margin-top: 0px;
+  }
+  .ScriptInputGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  .ScriptTextLabel {
+    /* Bold 12 (0.3 px, CAPS) */
+
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+
+    /* grayscale / gray */
+
+    color: #9FA2B4;
+  }
+.ScriptTextLabelActive{
+   /* Bold 12 (0.3 px, CAPS) */
+
+   font-family: "Mulish";
+   font-style: normal;
+   font-weight: bold;
+   font-size: 12px;
+   line-height: 15px;
+   letter-spacing: 0.3px;
+   text-transform: uppercase;
+
+   /* grayscale / gray */
+
+   color: #007AFF;
+}
+  .ScriptTextInput {
+    background: #F8F8F8;
+    /* grayscale / gray lightest */
+
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.3px;
+
+    /* grayscale / gray dark */
+
+    /* color: #4b506d; */
+    opacity: 1;
+    text-indent: 16px;
+    height: 42px;
+    width: 512px;
+    outline: none;
+  }
+
+  .ScriptTextInput::placeholder{
+    color: #d0d0d1;
+  }
+  
+
+
+  .ScriptTextInputActive{
+    background: #F8F8F8;
+    /* grayscale / gray lightest */
+
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.3px;
+
+    /* grayscale / gray dark */
+    text-indent: 16px;
+    height: 42px;
+    width: 512px;
+    outline: none;
+    background-color: #F8F8F8;		
+		border: 1px solid #0182FE;		
+		border-radius: 8px;
+  }
+
+  .ScriptButton {
+    background: #27ae60;
+    box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+    border-radius: 8px;
+    height: 27px;
+    width: 27px;
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 16px;
+    margin-left: 485px;
+  }
+  .ScriptSaveButton {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    text-align: center;
+    letter-spacing: 0.2px;
+
+    /* grayscale / white */
+    width: 82px;
+    height: 42px;
+    color: white;
+    /* green / default */
+
+    background: #27ae60;
+    /* gn accent default */
+
+    box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    margin-top: 156px;
+    margin-left: 430px;
+  }
+  .marginTop24 {
+    margin-top: 24px;
+  }
+  .marginTop5 {
+    margin-top: 5px;
+  }
+  .contentScripts {
+    margin-top: 54px;
+    margin-left: 28px;
+    margin-right: 35px;
+    margin-bottom: 30px;
+    height: 962px;
+    width: 1122px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboardScriptsContent {
+    width: 1185px;
+    height: 1100px;
+    background-color: #f7f8fc;
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 640px) {
+    .SideBarLinkStyle1:hover,
+    .SideBarLinkStyle2:hover,
+    .dashboardSidebarLowerLinks:hover {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      margin-left: 0.5%;
+      text-decoration: none;
+      outline: none;
+      background-color: rgba(159, 162, 180, 0.08);
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      border-right: 1px solid #000000;
+      border-left: 5px solid white;
+      box-sizing: border-box;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 99;
+    }
+    .dashboardLinkActive {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      text-align: center;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      margin-left: 0.5%;
+      text-decoration: none;
+      outline: none;
+      background-color: rgba(159, 162, 180, 0.08);
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      border-right: 1px solid #000000;
+      border-left: 5px solid white;
+      box-sizing: border-box;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 99;
+    }
+    .dashboardLinkActive a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10%;
+      margin-bottom: 0%;
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.2px;
+
+      /* sidebar / gray */
+
+      color: #a4a6b3;
+    }
+
+    .dashboardLinkActive2 {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      text-align: center;
+      align-items: center;
+      justify-content: flex-start;
+      color: #eb5757;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      margin-left: 0.5%;
+      text-decoration: none;
+      outline: none;
+      background-color: rgba(159, 162, 180, 0.08);
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      border-right: 1px solid #000000;
+      border-left: 5px solid white;
+      box-sizing: border-box;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 99;
+    }
+    .dashboardLinkActive2 a {
+      text-decoration: none;
+      color: #eb5757;
+      margin-left: 10%;
+      margin-bottom: 3%;
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.2px;
+    }
+    .dashboardVideoshareLogo {
+      margin-right: 38.25;
+    }
+    .dashboardContainer {
+      width: 1440px;
+      height: 1026px;
+      display: flex;
+      flex-direction: row;
+    }
+    .dashboardContent {
+      width: 100%;
+      background-color: #f7f8fc;
+      display: flex;
+      flex-direction: column;
+    }
+    .dashboardDivider {
+      border: 1px solid #dfe0eb;
+      height: 32px;
+      margin-top: 10px;
+      margin-bottom: 2px;
+      margin-left: 32px;
+    }
+    .dashboardSearch {
+      margin-left: 64px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+    .dashboardNotification {
+      margin-left: 24px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+    .dashboardUsername {
+      margin-left: 32px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* or 143% */
+
+      text-align: right;
+      letter-spacing: 0.2px;
+
+      /* grayscale / black */
+
+      color: #252733;
+      width: 109px;
+      height: 18px;
+    }
+    .dashboardHeader {
+      width: 1122px;
+      height: 44px;
+      margin-left: 30px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-items: flex-start;
+      align-content: center;
+    }
+    .settingText {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+      margin-bottom: 4px;
+      width: 771px;
+      /* grayscale / black */
+
+      color: #252733;
+    }
+    .dashboardSidebar {
+      width: 255px;
+      height: 608px;
+    }
+    .dashboardSidebarContent {
+      display: flex;
+      flex-direction: column;
+    }
+    .dashboardSideBarLinkWrapper {
+      margin-top: 52.75px;
+      height: auto;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+    }
+    .SideBarLinkStyle1 {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      text-align: center;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+    }
+    .SideBarLinkStyle2 {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      text-align: center;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+    }
+    .SideBarLinkStyle1 a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10%;
+      margin-bottom: 0%;
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.2px;
+
+      /* sidebar / gray */
+
+      color: #a4a6b3;
+    }
+    .SideBarLinkStyle2 a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10%;
+      margin-bottom: 3%;
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.2px;
+
+      color: #eb5757;
+    }
+    .dashboardIcon1 {
+      width: 16px;
+      height: 16px;
+      margin-top: -5px;
+      margin-left: 15%;
+    }
+    .dashboardIcon2 {
+      width: 24px;
+      height: 24px;
+      margin-top: -5px;
+      margin-left: 13.5%;
+    }
+    .dashboardSidebarLowerLinksWrapper {
+      margin-top: 144px;
+      color: white;
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .dashboardSidebarLowerLinks {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      justify-items: flex-start;
+    }
+    .dashboardSidebarActiveLink {
+      display: flex;
+      flex-direction: row;
+      width: 255px;
+      height: 56px;
+      justify-items: flex-start;
+      /* grayscale / gray */
+      background-color: rgba(159, 162, 180, 0.08);
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 99;
+    }
+    .willSlide {
+      margin-top: 2px;
+      margin-left: -10px;
+      width: 10px;
+      background-color: white;
+      height: 53px;
+    }
+    .dashboardSidebarActiveLinkAnchor {
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+      letter-spacing: 0.2px;
+      /* accent / light */
+      color: #dde2ff;
+      margin-top: 7%;
+      margin-left: 10%;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .dashboardSidebarLowerLinksAnchor {
+      outline: none;
+      text-decoration: none;
+      color: white;
+      margin-left: 10%;
+      margin-top: 7%;
+      /* Reg 16 (0.2 px) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.2px;
+
+      /* sidebar / gray */
+
+      color: #a4a6b3;
+    }
+    .dashboardSidebarLowerLinksImages {
+      margin-left: 13.5%;
+    }
+    .dashboardButtonsWrapper {
+      margin-top: 58px;
+      margin-left: 30px;
+      width: 514px;
+      height: 32px;
+      display: flex;
+      flex-direction: row;
+    }
+    .DashboardContentButton {
+      height: 32px;
+      min-width: 128px;
+      background: #ffffff;
+      border: 0.5px solid #dfe0eb;
+      box-sizing: border-box;
+      border-radius: 8px;
+      margin-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9fa2b4;
+    }
+    .DashboardContentButton a {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 14px;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: inherit;
+    }
+    .DashboardContentButton:hover {
+      background: #0182fe;
+      color: white;
+    }
+    .DashboardContentButtonActive {
+      height: 32px;
+      min-width: 128px;
+      border: 0.5px solid #dfe0eb;
+      box-sizing: border-box;
+      border-radius: 8px;
+      margin-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0182fe;
+      color: white;
+    }
+    .DashboardContentButtonActive a {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 14px;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: inherit;
+    }
+    .accountSettings {
+      width: 1122px;
+      height: 812px;
+      border-style: solid;
+      margin-left: 30px;
+      margin-top: 24px;
+      margin-right: 33px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      /* grayscale / divider */
+      border: 1px solid #dfe0eb;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .accountSettingsInput {
+      margin-left: 16px;
+      width: 512px;
+      height: 42px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+      letter-spacing: 0.3px;
+      /* grayscale / gray dark */
+      color: #4b506d;
+      opacity: 0.4;
+      outline: none;
+      border: none;
+    }
+    .hidden {
+      display: none;
+    }
+    .accountSettingsText {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      color: #252733;
+      width: 400px;
+      height: 24px;
+      margin-left: 32px;
+      margin-top: 32px;
+    }
+    .rowInAccountSettings {
+      margin-left: 32px;
+      margin-right: 32px;
+      width: 1058px;
+      height: 64px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .rowInAccountSettingsMarginTop {
+      margin-top: 21px;
+    }
+    .rowInAccountSettingsContent {
+      height: 64px;
+      width: 512px;
+      display: flex;
+      flex-direction: column;
+    }
+    .accountSettingsInputBox {
+      width: 512px;
+      height: 42px;
+      /* grayscale / extra light */
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .rowInAccountSettingsInputLabel {
+      /* Bold 12 (0.3 px, CAPS) */
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+    .accountSettingsButtonWrapper {
+      width: 220px;
+      height: 41px;
+      margin-top: 35px;
+      margin-left: 870px;
+      margin-right: 32px;
+    }
+    .discardChangesBTN {
+      width: 114px;
+      height: 40px;
+      background: none;
+      border: none;
+      outline: none;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: #9fa2b4;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-right: 24px;
+    }
+    .saveBTN {
+      width: 82px;
+      height: 38px;
+      background: #afebc8;
+      /* gn accent default */
+
+      box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      /* Semibold 14 (0.2 px) */
+
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.2px;
+
+      /* grayscale / white */
+
+      color: #ffffff;
+    }
+    .divider {
+      margin-top: 31px;
+      border: 0.5px solid #dfe0eb;
+    }
+    .dashboardCurrentPhotoWrapper {
+      margin: 32px;
+      height: 68px;
+    }
+    .dashboardCurrentPhotoLabel {
+      width: 512px;
+      height: 16px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.1px;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+    .dashboardCurrentPhotoRow {
+      display: flex;
+      flex-direction: row;
+    }
+    .dashboardCurrentPhoto {
+      width: 40px;
+      height: 40px;
+    }
+    .dashboardCurrentPhotoReminder {
+      margin-left: 16px;
+      width: 796px;
+      height: 16px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      /* identical to box height, or 133% */
+
+      letter-spacing: 0.1px;
+      /* grayscale / gray dark */
+
+      color: #4b506d;
+    }
+    .dashboardCurrentPhotoButton {
+      border: 1px solid #0182fe;
+      width: 174px;
+      height: 40px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      margin-left: 32px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.2px;
+      outline: none;
+
+      /* Logo Blue */
+
+      color: #0182fe;
+    }
+    .securitySection {
+      margin: 32px;
+    }
+    .securityLabel {
+      height: 16px;
+      width: 512px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.1px;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+      margin-top: 0px;
+    }
+    .previousPasswordWrapper {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      width: 512px;
+    }
+    .previousPasswordLabel {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-top: 0px;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+    .newPasswordLabel {
+      margin-top: 0px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+    .flexRowWrapper {
+      justify-content: space-between;
+      width: 1058px;
+      height: 64px;
+      display: flex;
+      flex-direction: row;
+    }
+    .previousPasswordInput {
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      letter-spacing: 0.3px;
+
+      /* grayscale / gray dark */
+      text-indent: 16px;
+      color: #4b506d;
+      opacity: 0.4;
+      width: 512px;
+      height: 42px;
+      outline: none;
+    }
+    .newPasswordWrapper {
+      margin-top: 16px;
+      width: 512px;
+      height: 64px;
+      flex-direction: column;
+    }
+    .newPasswordInput {
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      letter-spacing: 0.3px;
+
+      /* grayscale / gray dark */
+      text-indent: 16px;
+      color: #4b506d;
+      opacity: 0.4;
+      width: 512px;
+      height: 42px;
+      outline: none;
+    }
+    .confirmPasswordWrapper {
+      margin-top: 24px;
+      width: 512px;
+      height: 64px;
+      margin-left: 546px;
+      margin-right: 32px;
+    }
+    .confirmPasswordLabel {
+      /* Bold 12 (0.3 px, CAPS) */
+      margin-top: 0px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+    .confirmPasswordInput {
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      letter-spacing: 0.3px;
+
+      /* grayscale / gray dark */
+      text-indent: 16px;
+      color: #4b506d;
+      opacity: 0.4;
+      width: 512px;
+      height: 42px;
+      outline: none;
+    }
+    .securityBottomButtonsWrapper {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .twoFactorButton {
+      /* grayscale / gray light */
+
+      border: 1px solid #c5c7cd;
+      box-sizing: border-box;
+      border-radius: 8px;
+      /* Semibold 14 (0.2 px) */
+
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.2px;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+      width: 264px;
+      height: 40px;
+      outline: none;
+    }
+    .changePasswordButton {
+      border: 1px solid #c5c7cd;
+      box-sizing: border-box;
+      border-radius: 8px;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.2px;
+
+      /* Logo Blue */
+
+      color: #0182fe;
+      width: 172px;
+      height: 40px;
+      outline: none;
+    }
+    .DashboardSettingsContainer {
+      width: 1122px;
+      height: 646px;
+      border-style: solid;
+      margin-left: 30px;
+      margin-top: 24px;
+      margin-right: 33px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      /* grayscale / divider */
+      border: 1px solid #dfe0eb;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .DashboardSettingsText {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      color: #252733;
+      width: 400px;
+      height: 24px;
+      margin-left: 32px;
+      margin-top: 32px;
+    }
+    .DashboardInputLabel {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+
+      /* grayscale / gray */
+
+      color: #9fa2b4;
+    }
+
+    .dashboardBrandingThumbnail {
+      width: 191px;
+      height: 133px;
+    }
+
+    .brandingUploadLogoBtn {
+      border: 1px solid #0182fe;
+      box-sizing: border-box;
+      border-radius: 8px;
+      width: 174px;
+      height: 40px;
+      margin-top: 89px;
+      margin-left: 21px;
+      background-color: white;
+      outline: none;
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      text-align: center;
+      letter-spacing: 0.2px;
+
+      /* Logo Blue */
+
+      color: #0182fe;
+    }
+
+    .brandingUploadLogoBtnPlus {
+      /* green / default */
+      background: #27ae60;
+      box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+      border-radius: 8px;
+      height: 128px;
+      width: 27px;
+      border: none;
+      outline: none;
+      color: white;
+    }
+    .brandingTextBoxes {
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+      width: 512px;
+      height: 42px;
+      /* Reg 14 (0.3 px) */
+
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      letter-spacing: 0.3px;
+
+      /* grayscale / gray dark */
+
+      color: #4b506d;
+      opacity: 0.4;
+      text-indent: 16px;
+      outline: none;
+    }
+    .brandingTextBoxesVisible {
+      background: #fcfdfe;
+      /* grayscale / gray lightest */
+
+      border: 1px solid #f0f1f7;
+      box-sizing: border-box;
+      border-radius: 8px;
+      width: 512px;
+      height: 42px;
+      /* Reg 14 (0.3 px) */
+
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      /* identical to box height, or 143% */
+
+      letter-spacing: 0.3px;
+      opacity: 1;
+      text-indent: 16px;
+      color: black;
+      outline: none;
+    }
+    .primaryColourButton {
+      background: #0182fe;
+      box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+      border-radius: 7px;
+      height: 40px;
+      width: 40px;
+      outline: none;
+      border-style: none;
+      color: white;
+    }
+
+    .secondaryColourButton {
+      height: 40px;
+      width: 40px;
+      background: #f2994a;
+      box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+      border-radius: 7px;
+      outline: none;
+      border-style: none;
+      color: white;
+    }
+
+    .textColourButton {
+      outline: none;
+      border-style: none;
+      color: white;
+      height: 40px;
+      width: 40px;
+      background: #252733;
+      box-shadow: 0px 2px 6px rgba(111, 207, 151, 0.29);
+      border-radius: 7px;
+    }
+    .dashboardBrandingRow {
+      display: flex;
+      flex-direction: row;
+    }
+    .dashboardBrandingCol {
+      display: flex;
+      flex-direction: column;
+    }
+    .brandingTextBoxAndButtons {
+      margin-top: 35px;
+    }
+    .brandingSettingsSaveBTN {
+      background: #afebc8;
+      /* gn accent default */
+
+      box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+      border-radius: 8px;
+      width: 82px;
+      height: 40px;
+      outline: none;
+      border: none;
+      float: right;
+      margin-left: 1008px;
+      margin-top: 68px;
+      color: white;
+    }
+    .DashboardBrandingSettingsContentWrapper {
+      margin: 32px;
+    }
+    .brandingInputGroup {
+      width: 512px;
+      height: 64px;
+      margin-right: 32px;
+    }
+  }
+}

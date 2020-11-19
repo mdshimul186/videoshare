@@ -1,0 +1,622 @@
+.LandingMainDiv {
+	display: flex;
+	flex-direction: row;
+}
+.DashboardSettingsContainer {
+	margin-top: 24px;
+	margin-left: 30px;
+	width: 737px;
+	height: 916px;
+	border-style: solid;
+	background: #ffffff;
+	border: 1px solid #dfe0eb;
+	box-sizing: border-box;
+	border-radius: 8px;
+	position: relative;
+}
+.landingPageEditor {
+	margin-top: 24px;
+	margin-left: 29px;
+	width: 354px;
+	height: 916px;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	border: 1px solid #dfe0eb;
+	box-sizing: border-box;
+	border-radius: 8px;
+}
+.DashboardSettingsMainText {
+	margin-top: 32px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	letter-spacing: 0.4px;
+	color: #252733;
+	margin-left: 32px;
+	width: 541px;
+	height: 24;
+}
+.helpGroup {
+	margin-left: 80px;
+	display: flex;
+	flex-direction: row;
+	margin-top: 37px;
+	width: 52px;
+	height: 20px;
+	white-space: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.landingPagesHeader {
+	display: flex;
+	flex-direction: row;
+}
+.helpText {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	color: #4b506d;
+}
+.actualLandingPageWrapper {
+	width: 737px;
+	height: 831px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	background: none;
+	z-index: 99;
+}
+.backgroundImage {
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+}
+.landingPagesUrl {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	color: #9fa2b4;
+	border: #9fa2b4;
+	background: #ffffff;
+	border-radius: 8px;
+	width: 614px;
+	height: 36px;
+	margin-top: 25px;
+	outline: none;
+	text-indent: 12px;
+}
+.landingSettingsHeader {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	text-align: center;
+	letter-spacing: 0.4px;
+	color: #252733;
+	margin-top: 40.61px;
+	width: 209px;
+	height: 24px;
+	white-space: nowrap;
+}
+.landingSettingsDescription {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+	width: 449px;
+	height: 56px;
+	margin-top: 14px;
+}
+.bookAMeetingBTN {
+	width: 156px;
+	height: 41px;
+	background: #0182fe;
+	border-radius: 8px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+	text-align: center;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-top: 42px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+.landingpagecontentfooter {
+	position: absolute;
+	width: 737px;
+	height: 73px;
+	bottom: 0;
+	background: #dfe0eb;
+	border-radius: 0px 0px 8px 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.landingPageEditorHeading {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	letter-spacing: 0.4px;
+	color: #252733;
+	margin-left: 32px;
+	margin-top: 32px;
+	margin-right: 32px;
+	margin-bottom: 28px;
+}
+.landingPageEditorSeparator {
+	margin-top: 0px;
+	border: 1px solid #dfe0eb;
+	margin-bottom: 0;
+}
+.logoBtnGroup {
+	display: flex;
+	flex-direction: row;
+	width: 134px;
+	height: 44px;
+	margin-left: 32px;
+	margin-top: 21px;
+	justify-content: center;
+	align-items: center;
+}
+.logoCheck {
+	margin-top: 3px;
+	margin-left: 20px;
+}
+.logoBtn {
+	width: 134px;
+	height: 44px;
+	background: #0182fe;
+	box-shadow: 0px 4px 12px rgba(1, 130, 254, 0.24);
+	border-radius: 8px;
+	outline: none;
+	border: none;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.2px;
+	color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.urlText {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+	margin-left: 35px;
+	margin-top: 30px;
+}
+.urlGroup {
+	width: 295px;
+	height: 42px;
+	margin-top: 19px;
+	display: flex;
+	flex-direction: row;
+	margin-left: 36px;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0;
+}
+.urlInput {
+	width: 127px;
+	height: 32px;
+	outline: none;
+	text-indent: 12px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	opacity: 0.4;
+	color: #363740;
+}
+.urlInput::placeholder {
+	font-weight: normal;
+	color: #4b506d;
+}
+.websiteProtocol {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	color: #9fa2b4;
+}
+.mainUrl {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	color: #9fa2b4;
+}
+.mt40 {
+	margin-top: 40px;
+}
+.backgroundTextHeading {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+}
+.backgroundGroup {
+	display: flex;
+	flex-direction: column;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-top: 35px;
+	width: 290px;
+	height: 66px;
+	margin-bottom: 0;
+}
+.backgroundControlGroup {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0;
+	width: 290px;
+	height: 45px;
+}
+.headingGroup {
+	display: flex;
+	flex-direction: column;
+	width: 290px;
+	height: 66px;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-top: 29px;
+	margin-bottom: 0;
+}
+.headingGroupHead {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+	margin-bottom: 0;
+}
+.textGroup {
+	display: flex;
+	flex-direction: column;
+	width: 290px;
+	height: 110px;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-top: 28px;
+	margin-bottom: 0;
+}
+.textGroupHeading {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+}
+.ctaGroup {
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-bottom: 0;
+	margin-top: 28px;
+}
+.ctaGroupHeading {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+}
+.landingPageEditorBottomGroup {
+	margin-top: 22px;
+}
+.backgroundGroupSelect {
+	padding: 0.6em 1.4em 0.5em 0.8em;
+	width: 165px;
+	height: 44px;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url("/pagedropdown.svg"),
+		linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right 0.7em top 50%, 0 0;
+	background-size: 1em auto, 100%;
+	outline: none;
+	background-color: #fcfdfe;
+	border: 1px solid #f0f1f7;
+	box-sizing: border-box;
+	border-radius: 8px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+}
+.backgroundGroupSelect::-ms-expand {
+	display: none;
+}
+.backgroundGroupSelect:hover {
+	border-color: rgb(207, 203, 203);
+}
+.backgroundGroupSelect:focus {
+	border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(251, 252, 253, 0.7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	outline: none;
+}
+.backgroundGroupSelect option {
+	height: 44px;
+	font-size: 14px;
+	white-space: normal;
+}
+.backgroundGroupSelect option::after {
+	position: absolute;
+	content: "";
+	top: 14px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}
+.backgroundGroupColorInput {
+	width: 118px;
+	margin-left: 7px;
+	outline: none;
+	background: #dde2ff;
+	border: 1px solid #ffffff;
+	box-sizing: border-box;
+	border-radius: 8px;
+	text-indent: 16px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+}
+.headingGroupInput {
+	background: #fcfdfe;
+	border: 1px solid #f0f1f7;
+	box-sizing: border-box;
+	border-radius: 8px;
+	outline: none;
+	text-indent: 16px;
+	min-height: 44px;
+	width: 290px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+	margin-top: 6px;
+}
+.dropdownIndicatorIcon {
+	margin-top: -60px;
+	margin-left: 120px;
+	width: 16px;
+	cursor: pointer;
+}
+.textGroupTextArea {
+	background: #fcfdfe;
+	border: 1px solid #f0f1f7;
+	box-sizing: border-box;
+	border-radius: 8px;
+	outline: none;
+	min-width: 290px;
+	min-height: 88px;
+	max-width: 290px;
+	max-height: 88px;
+	resize: none;
+	text-indent: 6px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+
+	letter-spacing: 0.3px;
+
+	/* grayscale / gray dark */
+
+	opacity: 0.4;
+}
+.ctaGroupTextHeader {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+
+	/* grayscale / gray */
+
+	color: #9fa2b4;
+}
+.ctainputGroup {
+	display: flex;
+	flex-direction: row;
+	width: 288px;
+	height: 42px;
+	justify-content: center;
+	align-items: center;
+}
+.ctaToggle {
+	background: #f0f1f7;
+	border-radius: 100px;
+	width: 88px;
+	height: 32px;
+	outline: none;
+	border: none;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: 0.1px;
+	color: #4b506d;
+}
+.bookAMeetingText {
+	background: #fcfdfe;
+	width: 185px;
+	height: 42px;
+	border: 1px solid #f0f1f7;
+	box-sizing: border-box;
+	border-radius: 8px;
+	margin-left: 15px;
+	outline: none;
+	text-indent: 14px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+	opacity: 0.4;
+}
+.ctaLink {
+	margin-top: 13px;
+	background: #fcfdfe;
+	border: 1px solid #f0f1f7;
+	box-sizing: border-box;
+	border-radius: 8px;
+	width: 287px;
+	height: 42px;
+	outline: none;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+	color: #4b506d;
+	opacity: 0.4;
+}
+.saveLandingBtn {
+	background: #27ae60;
+	box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+	border-radius: 8px;
+	width: 291px;
+	height: 44px;
+	outline: none;
+	border: none;
+	margin-left: 30px;
+	margin-right: 33px;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.2px;
+	color: #ffffff;
+}
+.removeVideoshareBranding {
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.2px;
+	color: #9fa2b4;
+	white-space: nowrap;
+	width: 221px;
+	height: 20px;
+}
+.landingPageEditorBottomSubGroup {
+	margin-top: 13px;
+	width: 241px;
+	height: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-left: 55px;
+}
+.checkwithbg {
+	width: 20px;
+	height: 20px;
+	margin-left: 14px;
+}
+.logoImage {
+	margin-top: 13px;
+	margin-bottom: 14px;
+	width: 100%;
+	height: 85px;
+}
+.logoContainer {
+	margin-bottom: 14px;
+	width: 148px;
+	height: 85px;
+	margin: 0 auto;
+}
+.videoContainer{
+	padding:14px;
+}
+.superiorSpinner{
+	z-index:99999;
+}
