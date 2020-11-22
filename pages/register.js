@@ -39,7 +39,7 @@ const Register = () => {
       })
       .catch((err) => {
         console.log(err);
-        err && err.response && alert(err.response.data.message);
+        err && err.response && alert(err.response.data.error);
       });
   };
   return (
