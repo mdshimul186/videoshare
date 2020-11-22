@@ -1,0 +1,35 @@
+@media screen and (min-width: 640px) {
+  .brandingContainer {
+    width: 1122px;
+    height: 812px;
+    border-style: solid;
+    margin-left: 30px;
+    margin-top: 24px;
+    margin-right: 33px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    /* grayscale / divider */
+    border: 1px solid #d4d4d4;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+  .brandingText {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.3px;
+    color: #4b506d;
+    margin-left: 18px;
+    border: 1px solid #c5c7cd;
+    width: 356px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}

@@ -21,6 +21,7 @@ const MainSideBar = ({
   isSubscriptionLinkActive,
   isVideosLinkActive,
   isUsersLinkActive,
+  isBrandingLinkActive,
   activateDashboard,
   activateRecord,
   activateScript,
@@ -28,6 +29,7 @@ const MainSideBar = ({
   activateSubscriptions,
   activateVideos,
   activateUsers,
+  activateBranding,
 }) => {
   return (
     <div className={style.dashboardSidebar}>
@@ -116,6 +118,18 @@ const MainSideBar = ({
                     : "/sidebarUsersIcon.svg"
                 }
                 label="Users"
+                link="#/"
+              />
+            </div>
+            <div onClick={activateBranding}>
+              <SideBarLink
+                class={
+                  isBrandingLinkActive
+                    ? `${style.dashboardLinkActive}`
+                    : `${style.SideBarLinkStyle1}`
+                }
+                icon={isBrandingLinkActive ? "/branding.svg" : "/branding.svg"}
+                label="Branding"
                 link="#/"
               />
             </div>

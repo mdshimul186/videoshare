@@ -5,6 +5,7 @@ import DashboardMain from "../components/dashboard/main/DashboardMain";
 import DashboardRecord from "../components/dashboard/record/DashboardRecord";
 import DashboardScripts from "../components/dashboard/dashboardScripts/DashboardScripts";
 import Users from "../components/dashboard/users/Users";
+import Branding from "../components/dashboard/branding/brandingHome/Branding";
 import DashboardVideos from "../components/dashboard/videos/DashboardVideos";
 import DashboardSubscription from "../components/dashboard/dashboardSubscription/DashboardSubscription/DashboardSubscription";
 import style from "../styleModules/dashboard.module.css";
@@ -34,6 +35,7 @@ const Dashboard = (props) => {
   const [isScriptLinkActive, setScriptLinkActive] = useState(false);
   const [isVideosLinkActive, setVideosLinkActive] = useState(false);
   const [isUsersLinkActive, setUsersLinkActive] = useState(false);
+  const [isBrandingLinkActive, setBrandingLinkActive] = useState(false);
   const [isSettingsLinkActive, setSettingsLinkActive] = useState(false);
   const [isSubscriptionLinkActive, setSubscriptionLinkActive] = useState(false);
   const [isAccount, setAccount] = useState(true);
@@ -49,6 +51,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(false);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const activateRecord = () => {
     setDashboardLinkActive(false);
@@ -58,6 +61,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(false);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const activateScript = () => {
     setDashboardLinkActive(false);
@@ -67,6 +71,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(false);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const activateVideos = () => {
     setDashboardLinkActive(false);
@@ -76,6 +81,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(false);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const activateUsers = () => {
     setDashboardLinkActive(false);
@@ -85,6 +91,17 @@ const Dashboard = (props) => {
     setUsersLinkActive(true);
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(false);
+    setBrandingLinkActive(false);
+  };
+  const activateBranding = () => {
+    setDashboardLinkActive(false);
+    setRecordLinkActive(false);
+    setScriptLinkActive(false);
+    setVideosLinkActive(false);
+    setUsersLinkActive(false);
+    setSettingsLinkActive(false);
+    setSubscriptionLinkActive(false);
+    setBrandingLinkActive(true);
   };
 
   const activateSettings = () => {
@@ -95,6 +112,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(true);
     setSubscriptionLinkActive(false);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const activateSubscriptions = () => {
     setDashboardLinkActive(false);
@@ -104,6 +122,7 @@ const Dashboard = (props) => {
     setSettingsLinkActive(false);
     setSubscriptionLinkActive(true);
     setUsersLinkActive(false);
+    setBrandingLinkActive(false);
   };
   const settingsActivateAccount = () => {
     setAccount(true);
@@ -145,11 +164,13 @@ const Dashboard = (props) => {
         isSubscriptionLinkActive={isSubscriptionLinkActive}
         isVideosLinkActive={isVideosLinkActive}
         isUsersLinkActive={isUsersLinkActive}
+        isBrandingLinkActive={isBrandingLinkActive}
         activateDashboard={activateDashboard}
         activateRecord={activateRecord}
         activateScript={activateScript}
         activateVideos={activateVideos}
         activateUsers={activateUsers}
+        activateBranding={activateBranding}
         activateSettings={activateSettings}
         activateSubscriptions={activateSubscriptions}
       />
@@ -177,6 +198,7 @@ const Dashboard = (props) => {
       {/* VIDEOS COMPONENT GOES HERE */}
       {isVideosLinkActive ? <DashboardVideos /> : ""}
       {/* Users COMPONENT GOES HERE */}
+      {isBrandingLinkActive ? <Branding /> : ""}
       {isUsersLinkActive ? <Users /> : ""}
       {/* SUBSCRIPTION COMPONENT GOES HERE */}
       {isSubscriptionLinkActive ? <DashboardSubscription /> : ""}

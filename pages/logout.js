@@ -4,18 +4,18 @@ import Router from "next/router";
 import { SpinnerComponent } from "react-element-spinner";
 
 const logout = () => {
-	const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
-	Cookies.remove("token");
-	useEffect(() => {
-		Router.push("/login");
-		setLoading(false);
-	});
-	return (
-		<div>
-			<SpinnerComponent loading={isLoading} position="global" />
-		</div>
-	);
+  Cookies.remove("videoshare_token");
+  useEffect(() => {
+    Router.push("/login");
+    setLoading(false);
+  });
+  return (
+    <div>
+      <SpinnerComponent loading={isLoading} position="global" />
+    </div>
+  );
 };
 
 export default logout;
