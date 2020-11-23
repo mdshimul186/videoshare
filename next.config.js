@@ -29,14 +29,12 @@
 //   },
 // };
 
+// module.exports = {
+//   webpack: (config, { isServer }) => {
+//     if (isServer) {
+//       require('./components/generateSiteMap')
+//     }
 
-
-module.exports = {
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require('./components/generateSiteMap')
-    }
-
-    return config
-  }
-}
+//     return config
+//   }
+// }
