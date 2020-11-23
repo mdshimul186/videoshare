@@ -44,7 +44,7 @@ const withAuth = (AuthComponent) => {
       configureAxiosHeader();
       axios
         // eslint-disable-next-line no-undef
-        .post(process.env.API_LINK + "/user/verify", {})
+        .post(process.env.NEXT_PUBLIC_API_URL + "/user/verify", {})
         .then((res) => {
           if (res.status === 200 && res.data.success) {
             //do some change state

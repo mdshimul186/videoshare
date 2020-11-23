@@ -3,7 +3,7 @@ import RegisterStyles from "./styles/register.module.css";
 import axios from "axios";
 import Router from "next/router";
 import regeneratorRuntime from "regenerator-runtime";
-let REGISTER_API_LINK = `${process.env.API_LINK}/register`;
+let REGISTER_API_LINK = `${process.env.NEXT_PUBLIC_API_URL}/register`;
 
 const Register = () => {
   const [email, setEmail] = useState("");

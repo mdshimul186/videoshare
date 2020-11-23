@@ -78,7 +78,7 @@ const DashboardAccountSettings = () => {
     setLoading(true);
 
     axios
-      .post(process.env.API_LINK + "/editPassword", {
+      .post(process.env.NEXT_PUBLIC_API_URL + "/editPassword", {
         email: userData.email,
         currentpassword: prevPass,
         newpassword: newPass,
@@ -196,7 +196,7 @@ const DashboardAccountSettings = () => {
 
     setLoading(true);
     axios
-      .post(process.env.API_LINK + endpoint, data)
+      .post(process.env.NEXT_PUBLIC_API_URL + endpoint, data)
       .then((response) => {
         if (response.data.success) {
           //insert data
@@ -210,7 +210,7 @@ const DashboardAccountSettings = () => {
 
           axios
             .post(
-              process.env.API_LINK + editAccountSettingsEndpoint,
+              process.env.NEXT_PUBLIC_API_URL + editAccountSettingsEndpoint,
               dataToInsert
             )
             .then((response) => {
@@ -261,7 +261,7 @@ const DashboardAccountSettings = () => {
     data.append("file", picture);
     data.append("USERID", userData.USERID);
     axios
-      .post(`${process.env.API_LINK}/editImage`, data, {
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/editImage`, data, {
         headers: { "content-type": "multipart/form-data" },
       })
       .then((response) => {

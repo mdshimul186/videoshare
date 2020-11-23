@@ -7,8 +7,8 @@ import Cookies from "js-cookie";
 import { SpinnerComponent } from "react-element-spinner";
 import regeneratorRuntime from "regenerator-runtime";
 
-const apiLink = process.env.API_LINK;
-let LOGIN_API_LINK = `${process.env.API_LINK}/login`;
+const apiLink = process.env.NEXT_PUBLIC_API_URL;
+let LOGIN_API_LINK = `${process.env.NEXT_PUBLIC_API_URL}/login`;
 
 /**
  * @author Al Francis Gabriel Bolima
