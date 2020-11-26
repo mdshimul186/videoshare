@@ -6,7 +6,7 @@ import axios from "axios";
 const configureAxiosHeader = () => {
   const token = Cookies.get("videoshare_token");
   axios.defaults.headers.common = {
-    Authorization: "Bearer " + token,
+    Authorization: token,
   };
 };
 

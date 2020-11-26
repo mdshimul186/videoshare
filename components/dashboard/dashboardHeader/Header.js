@@ -28,7 +28,7 @@ const Header = (props) => {
         >{`${userData.firstName} ${userData.lastName}`}</p>
         <img
           className={styles.dashboardAvatar}
-          src={userData.PICTURE || "/dashboardAvatar.svg"}
+          src={userData.profilePicture || "/dashboardAvatar.svg"}
           alt="avatar"
         ></img>
       </div>

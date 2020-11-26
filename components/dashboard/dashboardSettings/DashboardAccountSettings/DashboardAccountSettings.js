@@ -78,7 +78,7 @@ const DashboardAccountSettings = () => {
     setLoading(true);
 
     axios
-      .post(process.env.NEXT_PUBLIC_API_URL + "/editPassword", {
+      .patch(process.env.NEXT_PUBLIC_API_URL + "/user/editPassword", {
         email: userData.email,
         currentpassword: prevPass,
         newpassword: newPass,
@@ -188,7 +188,7 @@ const DashboardAccountSettings = () => {
     if (numAttempts == 0) {
       Router.push("/logout");
     }
-    const endpoint = "/confirmpwd";
+    const endpoint = "/user/confirmpwd";
     const data = {
       email: userData.email,
       password: confirmTextBox,
@@ -200,7 +200,7 @@ const DashboardAccountSettings = () => {
       .then((response) => {
         if (response.data.success) {
           //insert data
-          const editAccountSettingsEndpoint = "/editaccountsettings";
+          const editAccountSettingsEndpoint = "/user/editaccountsettings";
           let dataToInsert = {
             firstName: firstNameValue,
             lastName: lastNameValue,
@@ -209,7 +209,7 @@ const DashboardAccountSettings = () => {
           };
 
           axios
-            .post(
+            .patch(
               process.env.NEXT_PUBLIC_API_URL + editAccountSettingsEndpoint,
               dataToInsert
             )
@@ -254,14 +254,13 @@ const DashboardAccountSettings = () => {
   };
 
   const handleUploadNewPhoto = () => {
-    return alert("comming soon");
     setLoading(true);
-    console.log("upload clicked");
+
     const data = new FormData();
-    data.append("file", picture);
-    data.append("USERID", userData.USERID);
+    data.append("profileimage", picture);
+
     axios
-      .post(`${process.env.NEXT_PUBLIC_API_URL}/editImage`, data, {
+      .put(`${process.env.NEXT_PUBLIC_API_URL}/user/editprofileimage`, data, {
         headers: { "content-type": "multipart/form-data" },
       })
       .then((response) => {
@@ -271,7 +270,7 @@ const DashboardAccountSettings = () => {
         dispatch({ type: "EDIT_USER_IMAGE", payload: link });
       })
       .catch((err) => {
-        console.log(err);
+        err && err.response && alert(err.response.data.error);
       });
   };
 
@@ -428,7 +427,7 @@ const DashboardAccountSettings = () => {
         >
           <img
             className={styles.dashboardCurrentPhoto}
-            src={imgData || userData.PICTURE}
+            src={imgData || userData.profilePicture}
             alt="avatar"
           ></img>
           <p className={styles.dashboardCurrentPhotoReminder}>
