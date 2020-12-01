@@ -10,8 +10,8 @@ import { useSelector } from "react-redux";
 import Header from "../../dashboardHeader/Header";
 import Select from "react-select";
 import { SpinnerComponent } from "react-element-spinner";
-import AddMasterUserModal from '../../../modals/Add master user/AddMasterUser'
-import InviteUser from '../../../modals/invite user modal/InviteUser'
+import AddMasterUserModal from '../../../modals/Addmasteruser/AddMasterUser'
+import InviteUser from '../../../modals/Inviteusermodal/InviteUser'
 
 import {
   toggleCurrentDashboardUsersPage,
