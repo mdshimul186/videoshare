@@ -1,11 +1,17 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React,{useEffect,useState} from "react";
+import axios from 'axios'
 import styles from "./AllUsers.module.css";
 import AllUsersTable from "../AllUsersTable/AllUsersTable";
 import Pagination from "../Pagination/Pagination";
 import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Header from "../../dashboardHeader/Header";
 import Select from "react-select";
+import { SpinnerComponent } from "react-element-spinner";
+import AddMasterUserModal from '../../../modals/Add master user/AddMasterUser'
+import InviteUser from '../../../modals/invite user modal/InviteUser'
 
 import {
   toggleCurrentDashboardUsersPage,
@@ -33,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 /**
- * @description This is the Allusers component which displays all the scripts when scripts on dashboard sidebar is clicked
+ * @description This is the Allusers component which displays all the users when user on dashboard sidebar is clicked
  * @param {number} minPage minimum number of page to be set
  * @param {Array} usersToRender all users to be seen here on the page
  * @param {number} pageNumber current page number
@@ -52,6 +58,119 @@ const ALLUsers = (props) => {
     nextPageButtonState,
     usersPerPage,
   } = props;
+
+  let dispatch = useDispatch()
+  const {auth} = useSelector(state=>state)
+
+
+  const [isModal, setIsModal] = useState(false)
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false)
+  const [isLoading, setLoading] = useState(false);
+
+  const [fname, setFname] = useState('')
+  const [lname, setLname] = useState('')
+  const [email, setEmail] = useState('')
+  const [jobRole, setJobRole] = useState('')
+  const [trxId, setTrxId] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [branding, setBranding] = useState('branding1')
+  const [script, setScript] = useState(false)
+  const [template, setTemplate] = useState(false)
+  const [access, setAccess] = useState('limited')
+
+  const handleAddMasterUser=()=>{
+    let newMasterUser={
+      firstName:fname,
+      lastName:lname,
+      email,
+      password,
+      confirmPassword
+    }
+    setLoading(true)
+    axios.post(process.env.NEXT_PUBLIC_API_URL+"/admin/createmasteruser",newMasterUser)
+    .then(res=>{
+      if(res.status === 201){
+        alert(res.data.message)
+        dispatch({
+          type:"ADD_NEW_USER",
+          payload:res.data.user
+        })
+        setIsModal(false)
+        setFname("")
+        setLname("")
+        setEmail("")
+        setPassword("")
+        setConfirmPassword("")
+        setLoading(false)
+      }
+    })
+    .catch(err=>{
+      setPassword("")
+      setConfirmPassword("")
+      setLoading(false)
+      err && err.response && alert(err.response.data.error)
+    })
+    
+  }
+
+
+
+  const handleInviteUser=()=>{
+    let newUser={
+      firstName:fname,
+      lastName:lname,
+      email,
+      jobRole,
+      trxId,
+      password,
+      confirmPassword,
+      branding,
+      script,
+      template,
+      fullAccess:access === 'full' ? true:false
+    }
+
+   // console.log(newUser);
+    setLoading(true)
+    axios.post(process.env.NEXT_PUBLIC_API_URL+"/master/inviteuser",newUser)
+    .then(res=>{
+      if(res.status === 201){
+        alert(res.data.message)
+        dispatch({
+          type:"ADD_NEW_USER",
+          payload:res.data.user
+        })
+        setIsInviteModalOpen(false)
+        setFname("")
+        setLname("")
+        setEmail("")
+        setJobRole("")
+        setScript(false)
+        setTemplate(false)
+        
+        setPassword("")
+        setConfirmPassword("")
+        setLoading(false)
+      }
+    })
+    .catch(err=>{
+      //setPassword("")
+      //setConfirmPassword("")
+      setLoading(false)
+      err && err.response && alert(err.response.data.error)
+    })
+    
+  }
+
+  const handleModal=()=>{
+      if(auth.userData.role === 'admin'){
+        setIsModal(!isModal)
+      }else if(auth.userData.role === 'master'){
+        setIsInviteModalOpen(!isInviteModalOpen)
+      }
+  }
+
   //initialize an empty array for us to store fetched data from the database
   const usersPerPageArr = [];
 
@@ -101,8 +220,60 @@ const ALLUsers = (props) => {
   };
 
   return (
-    <div className={styles.dashboardUsersContent}>
+    <div id="user" className={styles.dashboardUsersContent}>
       <Header />
+      <SpinnerComponent loading={isLoading} position="global" /> 
+
+      <AddMasterUserModal
+          isOpen={isModal}
+          setClosed={() => setIsModal(false)}
+          loaderParentElement={"user"}
+          sendFunction={()=>handleAddMasterUser()}
+          onChangeFname={(e)=>setFname(e.target.value)}
+          onChangeLname={(e)=>setLname(e.target.value)}
+          onChangeEmail={(e)=>setEmail(e.target.value)}
+          onChangeNewPassword={(e)=>setPassword(e.target.value)}
+          onChangeConfirmPassword={(e)=>setConfirmPassword(e.target.value)}
+          fnameValue={fname}
+          lnameValue={lname}
+          emailValue={email}
+          passwordValue={password}
+          confirmPasswordValue={confirmPassword}
+        />
+
+
+      <InviteUser
+          isOpen={isInviteModalOpen}
+          setClosed={() => setIsInviteModalOpen(false)}
+          loaderParentElement={"user"}
+          sendFunction={()=>handleInviteUser()}
+          onChangeFname={(e)=>setFname(e.target.value)}
+          onChangeLname={(e)=>setLname(e.target.value)}
+          onChangeEmail={(e)=>setEmail(e.target.value)}
+          onChangeJobRole={(e)=>setJobRole(e.target.value)}
+          onChangeTrxId={(e)=>setTrxId(e.target.value)}
+          onChangeNewPassword={(e)=>setPassword(e.target.value)}
+          onChangeConfirmPassword={(e)=>setConfirmPassword(e.target.value)}
+          onChangeBranding={(e)=>setBranding(e.target.value)}
+          selectScript={()=>setScript(!script)}
+          selectTemplate={()=>setTemplate(!template)}
+          onChangeAccess={(e)=>setAccess(e.target.value)}
+          fnameValue={fname}
+          lnameValue={lname}
+          emailValue={email}
+          jobRoleValue={jobRole}
+          trxIdValue={trxId}
+          passwordValue={password}
+          confirmPasswordValue={confirmPassword}
+          brandingValue={branding}
+          scriptValue={script}
+          templateValue={template}
+          accessValue={access}
+        />
+
+
+
+
       <div className={styles.contentUsers}>
         <div className={styles.allUsersWrapper}>
           <p className={styles.allUsers}>Users</p>
@@ -117,7 +288,7 @@ const ALLUsers = (props) => {
               placeholder="Search User"
             ></input>
           </div>
-          <button className={styles.newUserButton}>New User</button>
+          <button onClick={()=>handleModal()} className={styles.newUserButton}>New User</button>
         </div>
         {/* table goes here */}
         <div className={styles.usersTableContainer}>

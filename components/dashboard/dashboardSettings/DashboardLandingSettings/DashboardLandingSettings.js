@@ -14,7 +14,7 @@ import { SpinnerComponent } from "react-element-spinner";
 // eslint-disable-next-line no-undef
 const { API_LINK } = process.env;
 const DashboardLandingSettings = () => {
-	const [isLoading, setLoading] = useState(true);
+	const [isLoading, setLoading] = useState(false);
 	const currentState = useSelector((state) => state);
 	const { userData } = currentState.auth;
 	const getLandingDataLink = "/settings/getLandingData";
@@ -43,6 +43,7 @@ const DashboardLandingSettings = () => {
 		newScriptOptions[0]
 	);
 
+	/*
 	useEffect(() => {
 		axios
 			.post(API_LINK + getLandingDataLink, { USERID: userData.USERID })
@@ -80,6 +81,8 @@ const DashboardLandingSettings = () => {
 				}
 			});
 	}, []);
+
+	*/
 
 	const handleSelectValue = (selectedOption) => {
 		const finalSelectedOption = selectedOption;

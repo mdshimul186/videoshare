@@ -13,6 +13,7 @@ import { components } from "react-select";
 import DottedStyles from "./SelectButtonStyles/DottedStyles";
 import regeneratorRuntime from "regenerator-runtime";
 import AllUsersData from "../dummydata/dummyUsers";
+import { SpinnerComponent } from "react-element-spinner";
 
 /**
  * @description this function gets the data asyncronously
@@ -45,47 +46,69 @@ const mapDispatchToProps = (dispatch) => {
  */
 
 const Users = (props) => {
-  const currentState = useSelector((state) => state);
-  const { USERID } = currentState.auth.userData;
+  const {auth} = useSelector((state) => state);
+  
   // eslint-disable-next-line no-undef
-  const { API_LINK } = process.env;
+  
   const [selectedComponent, setSelectedComponent] = useState(null);
   console.log(selectedComponent);
 
-  /**
-   *
-   * @param {any} props pass USERID as props
-   */
-  async function getDataFromApi(props) {
-    // axios
-    //   .post(API_LINK + "/scripts/getScripts", { USERID: USERID })
-    //   .then((response) => {
-    //     const { data } = response;
-    //     console.log(data);
-    //     props.dashboardFetchUsers(data);
-    //     props.changeTotalUsers(data.length);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     return 400;
-    //   });
-
-    const data = AllUsersData;
-    props.dashboardFetchUsers(data);
-    props.changeTotalUsers(data.length);
-    // console.log(data);
-  }
-
   const [didMount, setDidMount] = useState(false);
   const [selectedOption] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+
+  async function getDataFromAdminApi(props) {
+    setLoading(true)
+    axios
+      .get(process.env.NEXT_PUBLIC_API_URL + "/admin/getmasteruser")
+      .then((res) => {
+        props.dashboardFetchUsers(res.data.master);
+        props.changeTotalUsers(res.data.master.length);
+    
+        setLoading(false)
+      })
+      .catch((err) => {
+        setLoading(false)
+        console.log(err);
+        return 400;
+      });
+  }
+
+
+  async function getDataFromMasterApi(props) {
+    setLoading(true)
+    axios
+      .get(process.env.NEXT_PUBLIC_API_URL + "/master/getuserbymaster")
+      .then((res) => {
+        props.dashboardFetchUsers(res.data.user);
+        props.changeTotalUsers(res.data.user.length);
+    
+        setLoading(false)
+      })
+      .catch((err) => {
+        setLoading(false)
+        console.log(err);
+        return 400;
+      });
+  }
+
+  
 
   /**
    * @description fire the getDataFromApi once
    */
   useEffect(() => {
     setDidMount(true);
-    getDataFromApi(props);
+    if(auth.userData.role === 'admin'){
+      getDataFromAdminApi(props)
+    }else if(auth.userData.role === 'master'){
+      getDataFromMasterApi(props)
+    }
+    
+    
     return () => setDidMount(false);
+    
   }, []);
 
   if (!didMount) {
@@ -130,6 +153,7 @@ const Users = (props) => {
 
   return (
     <div id="Users">
+    <SpinnerComponent loading={isLoading} position="global" />
       <AllUsers
         minPage={minPage}
         totalScripts={totalUsers}

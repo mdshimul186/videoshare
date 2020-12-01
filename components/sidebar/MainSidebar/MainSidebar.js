@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideBarLink from "../SideBarLink/SideBarLink";
 import style from "./MainSidebar.module.css";
+import { useSelector } from "react-redux";
 
 /**
  * @description this file is responsible for the sidebar component this can be seen on the left side part of the dashboard
@@ -31,6 +32,8 @@ const MainSideBar = ({
   activateUsers,
   activateBranding,
 }) => {
+  const { userData } = useSelector((state) => state.auth);
+
   return (
     <div className={style.dashboardSidebar}>
       <div className={style.dashboardSidebarContent}>
@@ -72,22 +75,26 @@ const MainSideBar = ({
               link="#/"
             />
           </div>
-          <div onClick={activateScript}>
-            <SideBarLink
-              class={
-                isScriptLinkActive
-                  ? `${style.dashboardLinkActive}`
-                  : `${style.SideBarLinkStyle1}`
-              }
-              icon={
-                isScriptLinkActive
-                  ? "/sidebarScriptsIconActive.svg"
-                  : "/sidebarScriptsIcon.svg"
-              }
-              label="Scripts"
-              link="#/"
-            />
-          </div>
+
+          {userData.accessType && userData.accessType.script && (
+            <div onClick={activateScript}>
+              <SideBarLink
+                class={
+                  isScriptLinkActive
+                    ? `${style.dashboardLinkActive}`
+                    : `${style.SideBarLinkStyle1}`
+                }
+                icon={
+                  isScriptLinkActive
+                    ? "/sidebarScriptsIconActive.svg"
+                    : "/sidebarScriptsIcon.svg"
+                }
+                label="Scripts"
+                link="#/"
+              />
+            </div>
+          )}
+
           <div onClick={activateVideos}>
             <SideBarLink
               class={
@@ -105,7 +112,10 @@ const MainSideBar = ({
             />
           </div>
           <div className={style.dashboardSidebarLowerLinksWrapper}>
-            <div onClick={activateUsers}>
+          {
+            userData && userData.role !== 'user' && 
+            (
+              <div onClick={activateUsers}>
               <SideBarLink
                 class={
                   isUsersLinkActive
@@ -121,6 +131,9 @@ const MainSideBar = ({
                 link="#/"
               />
             </div>
+            )
+          }
+            
             <div onClick={activateBranding}>
               <SideBarLink
                 class={

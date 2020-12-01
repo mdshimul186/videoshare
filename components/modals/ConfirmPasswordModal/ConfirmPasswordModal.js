@@ -4,10 +4,15 @@ import Modal from "react-modal";
 import { useSelector } from "react-redux";
 
 const ConfirmPasswordModal = ({
+	// eslint-disable-next-line react/prop-types
 	isOpen,
+	// eslint-disable-next-line react/prop-types
 	setClosed,
+	// eslint-disable-next-line react/prop-types
 	loaderParentElement,
+	// eslint-disable-next-line react/prop-types
 	sendFunction,
+	// eslint-disable-next-line react/prop-types
 	onConfirmTextBox,
 }) => {
 	const email = useSelector((state) => state.auth.userData.EMAIL);

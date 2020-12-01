@@ -38,15 +38,12 @@ const Login = () => {
           Cookies.set("videoshare_token", res.data.token);
           setToken(res.data.token);
           Router.push("/dashboard");
-        } else {
-          alert("failed login");
-          setLoading(false);
-          console.log(res.data);
         }
       })
       .catch((err) => {
-        console.log(err);
-        alert("failed login");
+        //console.log(err);
+        err && err.response && alert(err.response.data.error)
+        //alert("failed login");
         setLoading(false);
       });
   };

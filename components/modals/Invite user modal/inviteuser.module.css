@@ -1,0 +1,260 @@
+.Modal {
+  width: 812px;
+  height: 732px;
+  margin: 20px auto;
+
+  outline: none;
+  border: none;
+  background: #ffffff;
+  border: 0.5px solid #dfe0eb;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  z-index: 9999;
+  position: relative;
+}
+.Overlay {
+  background: #4b506d;
+  opacity: 0.6;
+  z-index: 9999;
+}
+.closeButton {
+  width: 24px;
+  height: 24px;
+  background-image: url("/closeButton.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: white;
+  outline: none;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  cursor: pointer;
+}
+.content {
+  /* position: absolute; */
+  width: 100%;
+  height: 700px;
+
+  margin-bottom: 36px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.heading {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  color: #252733;
+}
+.subHeading {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #9fa2b4;
+}
+.mainBody {
+  overflow-x: hidden;
+  margin-top: 15px;
+  padding-right: 14px;
+  display: flex;
+  width: 100%;
+ height: 732px;
+}
+.leftColumn {
+  width: 60%;
+}
+.rightColumn {
+  width: 40%;
+}
+.inviteUserContent {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.inviteInputLabelactive {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #007aff;
+}
+.inviteInputLabel {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #9fa2b4;
+}
+.inviteInputBox {
+  width: 435px;
+  height: 42px;
+  /* grayscale / extra light */
+  background: #fcfdfe;
+  /* grayscale / gray lightest */
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.inviteInputActive {
+  width: 435px;
+  height: 42px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  letter-spacing: 0.3px;
+  /* grayscale / gray dark */
+  background-color: #f8f8f8;
+  outline: none;
+  border: 1px solid #0182fe;
+  padding-left: 15px;
+  border-radius: 8px;
+}
+.inviteInput {
+  width: 435px;
+  height: 42px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  letter-spacing: 0.3px;
+  /* grayscale / gray dark */
+  background: #f8f8f8;
+  opacity: 1;
+  outline: none;
+  border: 1px solid rgb(202, 202, 202);
+  padding-left: 15px;
+  border-radius: 8px;
+}
+.inviteInputActiveR{
+	width: 220px;
+	height: 42px;
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+	letter-spacing: 0.3px;
+	/* grayscale / gray dark */
+	background-color: #f8f8f8;
+	outline: none;
+	border: 1px solid #0182fe;
+	padding-left: 15px;
+	border-radius: 8px;
+}
+.inviteInputR {
+	width: 220px;
+	height: 42px;
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+	letter-spacing: 0.3px;
+	/* grayscale / gray dark */
+	background: #f8f8f8;
+	opacity: 1;
+	outline: none;
+	border: 1px solid rgb(202, 202, 202);
+	padding-left: 15px;
+	border-radius: 8px;
+  }
+.script{
+	width: 199px;
+    /* height: 42px; */
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    background: #f8f8f8;
+    opacity: 1;
+    outline: none;
+    border: 1px solid rgb(202, 202, 202);
+    padding-left: 15px;
+    border-radius: 8px;
+    color: #9fa2b4;
+    padding: 13px 10px;
+	margin-top: 30px;
+	cursor: pointer;
+	
+}
+.activeScript{
+    width: 199px;
+    /* height: 42px; */
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    background: #f8f8f8;
+    opacity: 1;
+    outline: none;
+    border: 1px solid rgb(202, 202, 202);
+    padding-left: 15px;
+    border-radius: 8px;
+    padding: 13px 10px;
+    margin-top: 30px;
+	color: #0182fe;
+	cursor: pointer;
+}
+
+.RadioForm{
+margin-top: 30px;
+}
+.radioInput{
+height: 20px;
+width: 20px;
+}
+.radioInputLabel{
+	font-family: Mulish;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.2px;
+margin-left: 10px;
+
+color: #252733;
+}
+.RadioFormRow{
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+}
+.inviteButton{
+	background: #0182FE;
+    box-shadow: 0px 4px 12px rgba(1, 130, 254, 0.24);
+    border-radius: 8px;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px 31px;
+    margin-top: 58px;
+    right: 69px;
+    display: block;
+	position: absolute;
+	cursor: pointer;
+}

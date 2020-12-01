@@ -222,7 +222,7 @@ const DashboardAccountSettings = () => {
                 setPassModal(false);
                 // Router.reload("/dashboard");
                 // manipulate state instead
-                dispatch({ type: "EDIT_USER_DATA", payload: data });
+                dispatch({ type: "EDIT_USER_DATA", payload: data.user });
               }
             })
             .catch((err) => {

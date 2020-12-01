@@ -39,7 +39,7 @@ const DashboardBrandingSettings = () => {
 	//picture value to send
 	const [picture, setPicture] = useState(null);
 
-	useEffect(() => {
+	/*useEffect(() => {
 		setLoading(true);
 		axios
 			.post(API_LINK + "/getBrandingData", { USERID: userData.USERID })
@@ -81,6 +81,7 @@ const DashboardBrandingSettings = () => {
 				console.log(err);
 			});
 	}, []);
+	*/
 
 	const EditableInputStyle = {
 		input: {

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux'
 import styles from "./DashboardSettings.module.css";
 import DashboardAccountSettings from "../DashboardAccountSettings/DashboardAccountSettings";
 import DashboardBrandingSettings from "../DashboardBrandingSettings/DashboardBrandingSettings";
@@ -25,6 +26,8 @@ const SettingsContentButton = ({
 	isScript,
 	isLandingPage,
 }) => {
+
+	const { userData } = useSelector(state => state.auth)
 	return (
 		<div className={styles.dashboardButtonsWrapper}>
 			<div
@@ -53,18 +56,25 @@ const SettingsContentButton = ({
 				<a href="#/">BRANDING</a>
 			</div>
 
-			<div
-				onClick={() => {
-					settingsScriptAccount();
-				}}
-				className={
-					isScript
-						? `${styles.DashboardContentButtonActive}`
-						: `${styles.DashboardContentButton}`
-				}
-			>
-				<a href="#/">SCRIPT TEMPLATES</a>
-			</div>
+			{
+				userData && userData.accessType && userData.accessType.script &&
+					(
+						<div
+							onClick={() => {
+								settingsScriptAccount();
+							}}
+							className={
+								isScript
+									? `${styles.DashboardContentButtonActive}`
+									: `${styles.DashboardContentButton}`
+							}
+						>
+							<a href="#/">SCRIPT TEMPLATES</a>
+						</div>
+					)
+			}
+
+
 
 			<div
 				onClick={() => {
@@ -122,8 +132,8 @@ const DashboardSettings = ({
 					<DashboardAccountSettings />
 				</div>
 			) : (
-				""
-			)}
+					""
+				)}
 			{isBranding ? (
 				<div className={styles.dashboardBrandingContent} id="dashboardSettings">
 					<Header />
@@ -141,8 +151,8 @@ const DashboardSettings = ({
 					<DashboardBrandingSettings />
 				</div>
 			) : (
-				""
-			)}
+					""
+				)}
 			{isScript ? (
 				<div className={styles.dashboardScriptContent} id="dashboardSettings">
 					<Header />
@@ -160,8 +170,8 @@ const DashboardSettings = ({
 					<DashboardScriptSettings />
 				</div>
 			) : (
-				""
-			)}
+					""
+				)}
 			{isLandingPage ? (
 				<div className={styles.dashboardLandingContent} id="dashboardSettings">
 					<Header />
@@ -179,8 +189,8 @@ const DashboardSettings = ({
 					<DashboardLandingSettings />
 				</div>
 			) : (
-				""
-			)}
+					""
+				)}
 		</div>
 	);
 };

@@ -26,6 +26,21 @@ const usersReducer = (
         ...state,
         usersData: action.payload,
       };
+      case "ADD_NEW_USER":
+      return {
+        ...state,
+        usersData: [action.payload,...state.usersData],
+      };
+      case "DELETE_USER":
+
+      let allData = [...state.usersData]
+        let index = allData.findIndex(u=>u._id === action.payload)
+        allData.splice(index,1)
+        
+      return {
+        ...state,
+        usersData: allData,
+      };
     case TOGGLE_LOADING_TO_TRUE:
       return {
         ...state,
