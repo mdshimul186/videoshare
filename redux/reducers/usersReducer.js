@@ -1,11 +1,9 @@
 import {
-  DASHBOARD_FETCH_USERS,
-  TOGGLE_LOADING_TO_TRUE,
-  TOGGLE_LOADING_TO_FALSE,
-  TOGGLE_CURRENT_DASHBOARD_USERS_PAGE,
-  CHANGE_TOTAL_USERS,
-  CHANGE_USERS_PER_PAGE,
-  CHANGE_MIN_PAGE,
+  CHANGE_MIN_PAGE, CHANGE_TOTAL_USERS,
+  CHANGE_USERS_PER_PAGE, DASHBOARD_FETCH_USERS,
+
+
+  TOGGLE_CURRENT_DASHBOARD_USERS_PAGE, TOGGLE_LOADING_TO_FALSE, TOGGLE_LOADING_TO_TRUE
 } from "../actions/usersAction";
 
 const usersReducer = (
@@ -40,6 +38,16 @@ const usersReducer = (
       return {
         ...state,
         usersData: allData,
+      };
+      case "EDIT_USER":
+
+      let allDatas = [...state.usersData]
+        let index2 = allDatas.findIndex(u=>u._id == action.payload._id)
+        allDatas[index2] = action.payload
+        
+      return {
+        ...state,
+        usersData: allDatas,
       };
     case TOGGLE_LOADING_TO_TRUE:
       return {

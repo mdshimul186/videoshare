@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from "react";
-import style from "./inviteuser.module.css";
 import Modal from "react-modal";
 import { useSelector } from "react-redux";
+import style from "./inviteuser.module.css";
 
 const InviteUser = ({
 
@@ -188,7 +189,7 @@ const InviteUser = ({
                                 <input value={emailValue} type="email" onChange={onChangeEmail}></input> */}
                                 {/* <p>Job Role</p>
                                 <input value={jobRoleValue} type="text" onChange={onChangeJobRole}></input> */}
-                               
+
                                 {/* <p>New Password</p>
                                 <input value={passwordValue} type="password" onChange={onChangeNewPassword}></input>
                                 <p>Confirm Password</p>
@@ -212,11 +213,11 @@ const InviteUser = ({
                                             value={confirmPasswordValue}
 
                                         ></input> */}
-                                        <select 
-                                            className={isBrandingClicked ? style.inviteInputActiveR : style.inviteInputR} 
-                                            value={brandingValue} 
-                                            onChange={onChangeBranding} 
-                                            name="branding" 
+                                        <select
+                                            className={isBrandingClicked ? style.inviteInputActiveR : style.inviteInputR}
+                                            value={brandingValue}
+                                            onChange={onChangeBranding}
+                                            name="branding"
                                             id="branding"
                                             onBlur={() => setBrandingClicked(false)}
                                             onClick={() => setBrandingClicked(true)}

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import axios from 'axios'
-import { connect } from "react-redux";
-import { useDispatch,useSelector } from 'react-redux'
-import style from "./AllUsersTable.module.css";
-import Select from "react-select";
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 import { SpinnerComponent } from "react-element-spinner";
+import { connect, useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
+import DeleteUser from '../../../modals/DeleteUser/DeleteUser';
+import EditUser from '../../../modals/EditUser/EditUser';
+import style from "./AllUsersTable.module.css";
 
 const mapStateToProps = (state) => {
   return { users: state.users };
@@ -87,61 +86,28 @@ const AllUsersTable = ({ usersToRender }) => {
   const dispatch = useDispatch()
   const {auth} = useSelector(state=>state)
   const [isLoading, setLoading] = useState(false);
+  const [isModal, setIsModal] = useState(false)
+  const [isDeleteModal, setIsDeleteModal] = useState(false)
 
 
-  const handleDeleteMaster = (userid) => {
-    setLoading(true)
-    axios.delete(process.env.NEXT_PUBLIC_API_URL + "/admin/deletemasteruser/" + userid)
-      .then(res => {
-        if (res.data.success) {
-          alert(res.data.message)
-          dispatch({
-            type: "DELETE_USER",
-            payload: userid
-          })
-          setLoading(false)
-        }
-      })
-      .catch(err => {
-        setLoading(false)
-        err && err.response && alert(err.response.data.error)
-      })
-  }
+  const [selectedUser, setSelectedUser] = useState({})
+  const [selectedUserForDelete, setSelectedUserForDelete] = useState({})
 
 
-  const handleDeleteUser = (userid) => {
-    setLoading(true)
-    axios.delete(process.env.NEXT_PUBLIC_API_URL + "/master/deleteuser/" + userid)
-      .then(res => {
-        if (res.data.success) {
-          alert(res.data.message)
-          dispatch({
-            type: "DELETE_USER",
-            payload: userid
-          })
-          setLoading(false)
-        }
-      })
-      .catch(err => {
-        setLoading(false)
-        err && err.response && alert(err.response.data.error)
-      })
-  }
 
-  let handleOption = (e, userid) => {
+  let handleOption = (e, user) => {
 
     //console.log(userid);
     //alert(e.value,userid);
     if (e.value === 'delete') {
-      let consent = confirm("are you sure")
-      if (consent) {
-        if(auth.userData.role === 'admin'){
-          handleDeleteMaster(userid)
-        }else if(auth.userData.role === 'master'){
-          handleDeleteUser(userid)
-        }
-      }
+      
+      setIsDeleteModal(true)
+      setSelectedUserForDelete(user)
 
+    }else if(e.value === 'edit'){
+      setIsModal(true)
+      setSelectedUser(user)
+          
     }
 
 
@@ -153,6 +119,7 @@ const AllUsersTable = ({ usersToRender }) => {
     users.map((user) => {
       return (
         <React.Fragment key={user._id}>
+        
           <div className={`flex-row ${style.AllUsersTable}`}>
             <div className={style.userinfo}>
               <img className={style.userAvatar} src={user.profilePicture ? user.profilePicture : "videoman.png"}></img>
@@ -174,7 +141,7 @@ const AllUsersTable = ({ usersToRender }) => {
                   IndicatorSeparator: () => null,
                   DropdownIndicator: () => true,
                 }}
-                onChange={(e) => handleOption(e, user._id)}
+                onChange={(e) => handleOption(e, user)}
                 className="react-select-container"
                 classNamePrefix="react-select"
                 styles={customStyles}
@@ -194,7 +161,27 @@ const AllUsersTable = ({ usersToRender }) => {
   } else if (users.length === 0) {
     return <p className={style.NoScriptText}>You have no users yet!.</p>;
   } else {
-    return <div><SpinnerComponent loading={isLoading} position="global" />{AllUsersList}</div>;
+    return <div>
+    <SpinnerComponent loading={isLoading} position="global" />
+    <EditUser
+          isOpen={isModal}
+          setClosed={() => {
+            setSelectedUser({})
+            setIsModal(false)
+            }}
+          loaderParentElement={"user"}
+          selectedUser={selectedUser}
+        />
+    <DeleteUser
+          isOpen={isDeleteModal}
+          setClosed={() => {
+            setSelectedUserForDelete({})
+            setIsDeleteModal(false)
+            }}
+          loaderParentElement={"user"}
+          selectedUser={selectedUserForDelete}
+        />
+    {AllUsersList}</div>;
   }
 };
 

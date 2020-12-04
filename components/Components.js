@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import ComponentStyle from "./components.module.css";
 
-/**
- * @author Al Francis Gabriel Bolima
- * @description this do nothing, I just initialized it because the file needs a export default
- */
+
 
 const Components = () => {
   return (
@@ -14,10 +11,7 @@ const Components = () => {
   );
 };
 
-/**
- * @author Al Francis Gabriel Bolima
- * @description this reusable component is used to hold email wrapper as well as input box
- */
+
 const EmailGroup = () => {
   return (
     <div className={ComponentStyle.loginEmailWrapper}>
@@ -37,7 +31,7 @@ const EmailGroup = () => {
  * @date 2020-09-09
  * @param {any} props - pass in props
  * @param {any} props.buttonLabel - specific props to get the label value
- * @returns {any}
+ * @return {any}
  */
 const CustomBtn = (props) => {
   return (
@@ -63,6 +57,8 @@ const PasswordGroup = () => {
       setInputType("password");
     }
   };
+
+
   return (
     <div className={ComponentStyle.loginPasswordWrapper}>
       <div className={ComponentStyle.loginPasswordTextWrapper}>

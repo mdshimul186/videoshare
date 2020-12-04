@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
-import LoginStyles from "./styles/login.module.css";
-import { EmailGroup, PasswordGroup, CustomBtn } from "../components/Components";
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-undef */
 import axios from "axios";
-import Router from "next/router";
 import Cookies from "js-cookie";
+import Router from "next/router";
+import React, { useEffect, useState } from "react";
 import { SpinnerComponent } from "react-element-spinner";
-import regeneratorRuntime from "regenerator-runtime";
 import GoogleLogin from "react-google-login";
+import 'regenerator-runtime/runtime';
+import { CustomBtn, EmailGroup, PasswordGroup } from "../components/Components";
+import LoginStyles from "./styles/login.module.css";
+import regeneratorRuntime from "regenerator-runtime";
+
 
 const apiLink = process.env.NEXT_PUBLIC_API_URL;
 let LOGIN_API_LINK = `${process.env.NEXT_PUBLIC_API_URL}/user/login`;
 
-/**
- * @author Al Francis Gabriel Bolima
- * @description this is the main login form it has 3 sub components (EmailGroup, PasswordGroup, CustomBtn) which can be found in Components.js
- */
+
 const Login = () => {
   const [googleLink, setGoogleLink] = useState("");
   const [token, setToken] = useState(undefined);

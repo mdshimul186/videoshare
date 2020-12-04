@@ -1,23 +1,19 @@
 /* eslint-disable react/prop-types */
-import React,{useEffect,useState} from "react";
-import axios from 'axios'
-import styles from "./AllUsers.module.css";
+import axios from 'axios';
+import React, { useState } from "react";
+import { SpinnerComponent } from "react-element-spinner";
+import { connect, useDispatch, useSelector } from "react-redux";
+import AddMasterUserModal from '../../../modals/Addmasteruser/AddMasterUser';
+import InviteUser from '../../../modals/Inviteusermodal/InviteUser';
+import Header from "../../dashboardHeader/Header";
 import AllUsersTable from "../AllUsersTable/AllUsersTable";
 import Pagination from "../Pagination/Pagination";
-import { connect } from "react-redux";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import Header from "../../dashboardHeader/Header";
-import Select from "react-select";
-import { SpinnerComponent } from "react-element-spinner";
-import AddMasterUserModal from '../../../modals/Addmasteruser/AddMasterUser'
-import InviteUser from '../../../modals/Inviteusermodal/InviteUser'
-
 import {
-  toggleCurrentDashboardUsersPage,
   changeMinPage,
-  changeUsersPerPage,
+  changeUsersPerPage, toggleCurrentDashboardUsersPage
 } from "./actions/usersAction";
+import styles from "./AllUsers.module.css";
+
 
 const mapStateToProps = (state) => {
   return { users: state.users };
@@ -79,40 +75,7 @@ const ALLUsers = (props) => {
   const [template, setTemplate] = useState(false)
   const [access, setAccess] = useState('limited')
 
-  const handleAddMasterUser=()=>{
-    let newMasterUser={
-      firstName:fname,
-      lastName:lname,
-      email,
-      password,
-      confirmPassword
-    }
-    setLoading(true)
-    axios.post(process.env.NEXT_PUBLIC_API_URL+"/admin/createmasteruser",newMasterUser)
-    .then(res=>{
-      if(res.status === 201){
-        alert(res.data.message)
-        dispatch({
-          type:"ADD_NEW_USER",
-          payload:res.data.user
-        })
-        setIsModal(false)
-        setFname("")
-        setLname("")
-        setEmail("")
-        setPassword("")
-        setConfirmPassword("")
-        setLoading(false)
-      }
-    })
-    .catch(err=>{
-      setPassword("")
-      setConfirmPassword("")
-      setLoading(false)
-      err && err.response && alert(err.response.data.error)
-    })
-    
-  }
+
 
 
 
@@ -133,6 +96,7 @@ const ALLUsers = (props) => {
 
    // console.log(newUser);
     setLoading(true)
+    // eslint-disable-next-line no-undef
     axios.post(process.env.NEXT_PUBLIC_API_URL+"/master/inviteuser",newUser)
     .then(res=>{
       if(res.status === 201){
@@ -228,17 +192,6 @@ const ALLUsers = (props) => {
           isOpen={isModal}
           setClosed={() => setIsModal(false)}
           loaderParentElement={"user"}
-          sendFunction={()=>handleAddMasterUser()}
-          onChangeFname={(e)=>setFname(e.target.value)}
-          onChangeLname={(e)=>setLname(e.target.value)}
-          onChangeEmail={(e)=>setEmail(e.target.value)}
-          onChangeNewPassword={(e)=>setPassword(e.target.value)}
-          onChangeConfirmPassword={(e)=>setConfirmPassword(e.target.value)}
-          fnameValue={fname}
-          lnameValue={lname}
-          emailValue={email}
-          passwordValue={password}
-          confirmPasswordValue={confirmPassword}
         />
 
 
