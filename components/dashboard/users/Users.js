@@ -15,21 +15,7 @@ import regeneratorRuntime from "regenerator-runtime";
 import AllUsersData from "../dummydata/dummyUsers";
 import { SpinnerComponent } from "react-element-spinner";
 
-/**
- * @description this function gets the data asyncronously
- * it waits for the data to be retrieved and then updates the state
- * payload is AllScriptData (all scripts)
- * and AllScriptData.length (how long is the data or simply, how many data is stored)
- */
-/**
- * @description
- * map state to props lets us get the state from the store and then bind it as props
- * you can see here that it was binded as scripts props
- * you can call it on default function DashboardScripts(props)
- * as props.scripts (this should give us the state)
- * @param {any} state state of the scripts
- * @return {any} scripts
- */
+
 const mapStateToProps = (state) => {
   return { users: state.users };
 };

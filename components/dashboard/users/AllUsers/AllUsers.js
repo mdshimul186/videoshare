@@ -7,6 +7,7 @@ import AddMasterUserModal from '../../../modals/Addmasteruser/AddMasterUser';
 import InviteUser from '../../../modals/Inviteusermodal/InviteUser';
 import Header from "../../dashboardHeader/Header";
 import AllUsersTable from "../AllUsersTable/AllUsersTable";
+import PendingUser from "../../../modals/PendingUser/PendingUser";
 import Pagination from "../Pagination/Pagination";
 import {
   changeMinPage,
@@ -61,6 +62,7 @@ const ALLUsers = (props) => {
 
   const [isModal, setIsModal] = useState(false)
   const [isInviteModalOpen, setIsInviteModalOpen] = useState(false)
+  const [isPendingModalOpen, setIsPendingModalOpen] = useState(false)
   const [isLoading, setLoading] = useState(false);
 
   const [fname, setFname] = useState('')
@@ -77,6 +79,14 @@ const ALLUsers = (props) => {
 
 
 
+  const handleAccess=(e)=>{
+    setAccess(e.target.value)
+    if(e.target.value === 'full'){
+      setScript(true)
+      setTemplate(true)
+    }
+
+  }
 
 
   const handleInviteUser=()=>{
@@ -193,6 +203,17 @@ const ALLUsers = (props) => {
           setClosed={() => setIsModal(false)}
           loaderParentElement={"user"}
         />
+        {
+          auth.userData && auth.userData.role === 'admin' &&
+          (
+            <PendingUser
+          isOpen={isPendingModalOpen}
+          setClosed={() => setIsPendingModalOpen(false)}
+          loaderParentElement={"user"}
+        />
+          )
+        }
+
 
 
       <InviteUser
@@ -210,7 +231,7 @@ const ALLUsers = (props) => {
           onChangeBranding={(e)=>setBranding(e.target.value)}
           selectScript={()=>setScript(!script)}
           selectTemplate={()=>setTemplate(!template)}
-          onChangeAccess={(e)=>setAccess(e.target.value)}
+          onChangeAccess={(e)=>handleAccess(e)}
           fnameValue={fname}
           lnameValue={lname}
           emailValue={email}
@@ -241,6 +262,10 @@ const ALLUsers = (props) => {
               placeholder="Search User"
             ></input>
           </div>
+          {
+            auth.userData.role === 'admin' &&  <button onClick={()=>setIsPendingModalOpen(true)} className={styles.newUserButton}>Pending User</button>
+          }
+         
           <button onClick={()=>handleModal()} className={styles.newUserButton}>New User</button>
         </div>
         {/* table goes here */}

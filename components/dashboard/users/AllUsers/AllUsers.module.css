@@ -90,6 +90,11 @@
   margin-top: 25px;
   margin-left: 5px;
   font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+.newUserButton:focus{
+  outline: none;
 }
 .AllUsersTable {
   width: 1120px;

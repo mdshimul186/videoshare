@@ -57,7 +57,7 @@ const SettingsContentButton = ({
 			</div>
 
 			{
-				userData && userData.accessType && userData.accessType.script &&
+				userData && userData.accessType && userData.accessType.template &&
 					(
 						<div
 							onClick={() => {

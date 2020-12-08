@@ -1,0 +1,48 @@
+.Modal {
+    width: 812px;
+    height: 732px;
+    margin: 0 auto;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    background: #ffffff;
+    border: 0.5px solid #dfe0eb;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    z-index: 9999;
+    position: relative;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .Overlay {
+    background: #4b506d;
+    opacity: 0.6;
+    z-index: 9999;
+  }
+  .closeButton {
+    width: 24px;
+    height: 24px;
+    background-image: url("/closeButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: white;
+    outline: none;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+  }
+  .title{
+      text-align: center;
+      font-weight: bold;
+      font-size: 17px;
+  }
+  .content{
+      padding: 20px;
+  }
+  .singleList{
+      display: flex;
+      justify-content: space-between;
+  }
