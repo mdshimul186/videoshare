@@ -122,7 +122,12 @@ const AllUsersTable = ({ usersToRender }) => {
         
           <div className={`flex-row ${style.AllUsersTable}`}>
             <div className={style.userinfo}>
-              <img className={style.userAvatar} src={user.profilePicture ? user.profilePicture : "videoman.png"}></img>
+            {
+              auth.userData && auth.userData.role === 'admin' &&
+              (
+                <img className={style.userAvatar} src={user.profilePicture ? user.profilePicture : "videoman.png"}></img>
+              )
+            }
               <p className={style.userName}>{user.firstName} {user.lastName}</p>
             </div>
             <p className={`${style.role} ${style.userRole}	`}>{user.jobRole ? user.jobRole : "N/A"}</p>

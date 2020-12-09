@@ -65,6 +65,7 @@
   display: flex;
   width: 87%;
   justify-content: space-between;
+  margin-bottom: 60px
 }
 .leftColumn {
   width: 45%;
@@ -223,6 +224,7 @@
   position: absolute;
   right: 13px;
   padding-left: 50px;
+  margin-top: 56px;
 }
 .cancleButton {
   color: #9fa2b4;

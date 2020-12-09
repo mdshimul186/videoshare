@@ -90,6 +90,15 @@ const ALLUsers = (props) => {
 
 
   const handleInviteUser=()=>{
+
+    if(!auth.userData.inviteCount){
+      return alert("You have no invite count left")
+    }
+    if(auth.userData.inviteCount === 0){
+      return alert("You have no invite count left")
+    }
+
+
     let newUser={
       firstName:fname,
       lastName:lname,
@@ -114,6 +123,10 @@ const ALLUsers = (props) => {
         dispatch({
           type:"ADD_NEW_USER",
           payload:res.data.user
+        })
+        dispatch({
+          type:"INSERT_USER_DATA",
+          payload:res.data.master2
         })
         setIsInviteModalOpen(false)
         setFname("")
@@ -262,9 +275,9 @@ const ALLUsers = (props) => {
               placeholder="Search User"
             ></input>
           </div>
-          {
+          {/* {
             auth.userData.role === 'admin' &&  <button onClick={()=>setIsPendingModalOpen(true)} className={styles.newUserButton}>Pending User</button>
-          }
+          } */}
          
           <button onClick={()=>handleModal()} className={styles.newUserButton}>New User</button>
         </div>

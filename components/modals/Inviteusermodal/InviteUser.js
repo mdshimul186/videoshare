@@ -33,10 +33,8 @@ const InviteUser = ({
     templateValue,
     accessValue
 }) => {
-    const email = useSelector((state) => state.auth.userData.EMAIL);
-    useEffect(() => {
-        console.log(email);
-    }, []);
+    const {userData} = useSelector((state) => state.auth);
+   
 
     const [isFnameClicked, setFnameClicked] = useState(false);
     const [isLnameClicked, setLnameClicked] = useState(false);
@@ -66,9 +64,9 @@ const InviteUser = ({
                     ></button>
                     <div className={style.content}>
                         <p className={style.heading}>
-                            Invite User
+                            Invite User <span style={{fontSize:"14px",color:"#9fa2b4"}}>({userData.inviteCount ? userData.inviteCount :0} invites left)</span>
 						</p>
-                        <p className={style.subHeading}>Type in the email address of the user you'd like to invite, then <br></br> select their role.</p>
+                        <p className={style.subHeading} >Type in the email address of the user you'd like to invite, then <br></br> select their role.</p>
 
                         <div className={style.mainBody}>
                             <div className={style.leftColumn}>

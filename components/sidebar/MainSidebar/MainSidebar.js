@@ -43,7 +43,11 @@ const MainSideBar = ({
           alt="VideoShare Logo"
         ></img>
         <div className={style.dashboardSideBarLinkWrapper}>
-          <div onClick={activateDashboard}>
+
+        {
+          userData && userData.role === 'user' &&
+          (
+            <div onClick={activateDashboard}>
             <SideBarLink
               class={
                 isDashboardLinkActive
@@ -59,7 +63,14 @@ const MainSideBar = ({
               link="#/"
             />
           </div>
-          <div onClick={activateRecord}>
+          )
+        }
+          
+
+          {
+            userData && userData.role === 'user' &&
+            (
+              <div onClick={activateRecord}>
             <SideBarLink
               class={
                 isRecordLinkActive
@@ -75,8 +86,11 @@ const MainSideBar = ({
               link="#/"
             />
           </div>
+            )
+          }
+          
 
-          {userData.accessType && userData.accessType.script && (
+          {userData && userData.role !== 'admin' && userData.accessType && userData.accessType.script && (
             <div onClick={activateScript}>
               <SideBarLink
                 class={
@@ -95,7 +109,11 @@ const MainSideBar = ({
             </div>
           )}
 
-          <div onClick={activateVideos}>
+
+          {
+            userData && userData.role !== 'admin' &&
+            (
+              <div onClick={activateVideos}>
             <SideBarLink
               class={
                 isVideosLinkActive
@@ -111,6 +129,9 @@ const MainSideBar = ({
               link="#/"
             />
           </div>
+            )
+          }
+          
           <div className={style.dashboardSidebarLowerLinksWrapper}>
           {
             userData && userData.role !== 'user' && 
@@ -133,8 +154,10 @@ const MainSideBar = ({
             </div>
             )
           }
-            
-            <div onClick={activateBranding}>
+            {
+              userData && userData.role !== 'admin' &&
+              (
+                <div onClick={activateBranding}>
               <SideBarLink
                 class={
                   isBrandingLinkActive
@@ -146,6 +169,11 @@ const MainSideBar = ({
                 link="#/"
               />
             </div>
+              )
+            }
+
+
+            
             <div onClick={activateSettings}>
               <SideBarLink
                 class={
@@ -162,7 +190,13 @@ const MainSideBar = ({
                 link="#/"
               />
             </div>
-            <div onClick={activateSubscriptions}>
+
+
+
+            {
+              userData && userData.role === 'user' &&
+              (
+                <div onClick={activateSubscriptions}>
               <SideBarLink
                 class={
                   isSubscriptionLinkActive
@@ -178,6 +212,9 @@ const MainSideBar = ({
                 link="#/"
               />
             </div>
+              )
+            }
+           
           </div>
         </div>
       </div>

@@ -88,6 +88,7 @@ const AddMasterUserModal = ({
       const [organization, setOrganization] = useState('')
       const [contact, setContact] = useState('')
       const [password, setPassword] = useState('')
+      const [inviteCount, setInviteCount] = useState(0)
 
       const [genPass, setGenPass] = useState(false)
       const [passChangeNextTime, setPassChangeNextTime] = useState(false)
@@ -107,6 +108,7 @@ const AddMasterUserModal = ({
     const [isOrganizationClicked, setOrganizationClicked] = useState(false);
     const [isServiceClicked, setServiceClicked] = useState(false);
     const [isContactClicked, setContactClicked] = useState(false);
+    const [isInviteCountClicked, setInviteCountClicked] = useState(false);
     
 
 
@@ -145,6 +147,7 @@ const AddMasterUserModal = ({
         formData.append("organization",organization)
         formData.append("contact",contact)
         formData.append("service",service)
+        formData.append("inviteCount",inviteCount)
         formData.append("profileimage",image)
 
         axios.post(process.env.NEXT_PUBLIC_API_URL+"/admin/createmasteruser",formData)
@@ -164,6 +167,7 @@ const AddMasterUserModal = ({
         setOrganization("")
         setService("")
         setContact("")
+        setInviteCount(0)
         setLoading(false)
         setGenPass(false)
         setPassChangeNextTime(false)
@@ -292,7 +296,24 @@ const AddMasterUserModal = ({
                                             control={<IOSSwitch checked={passChangeNextTime} onChange={(e)=>setPassChangeNextTime(e.target.checked)} name="passChange" />}
                                             label={<p className={style.swithLabel}>Ask for a password change at the next sign-in</p>}
                                         />
+                                </div>
+
+                                <div className={style.inviteUserContent}>
+                                    <p className={isInviteCountClicked ? style.inviteInputLabelactive : style.inviteInputLabel}>
+                                        Invitation Limit
+                                    </p>
+                                    <div className={style.inviteInputBox}>
+                                        <input
+                                            onBlur={() => setInviteCountClicked(false)}
+                                            onChange={(e)=>setInviteCount(e.target.value)}
+                                            onClick={() => setInviteCountClicked(true)}
+                                            className={isInviteCountClicked ? style.inviteInputActive : style.inviteInput}
+                                            value={inviteCount}
+                                            type="number"
+                                            
+                                        ></input>
                                     </div>
+                                </div>
 
 
                             </div>

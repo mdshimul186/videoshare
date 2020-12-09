@@ -24,13 +24,9 @@ const Dashboard = (props) => {
     dispatch({ type: "TOGGLE_LOGIN_STATE" });
   };
 
-  useEffect(() => {
-    setLoading(true);
-    handleAuthChange(props.userData);
-    return setLoading(false);
-  }, [props.userData]);
+  
 
-  const [isDashboardLinkActive, setDashboardLinkActive] = useState(true);
+  const [isDashboardLinkActive, setDashboardLinkActive] = useState(false);
   const [isRecordLinkActive, setRecordLinkActive] = useState(false);
   const [isScriptLinkActive, setScriptLinkActive] = useState(false);
   const [isVideosLinkActive, setVideosLinkActive] = useState(false);
@@ -148,6 +144,28 @@ const Dashboard = (props) => {
     setScript(false);
     setLandingPage(true);
   };
+
+
+  useEffect(() => {
+    setLoading(true);
+    handleAuthChange(props.userData);
+    if(props.userData && props.userData.role === 'admin'){
+     
+      setUsersLinkActive(true)
+    }else if(props.userData && props.userData.role === 'master'){
+      setScriptLinkActive(true)
+    }else{
+      setDashboardLinkActive(true)
+    }
+    return setLoading(false);
+  }, [props.userData]);
+
+
+
+  useEffect(() => {
+   
+   
+  }, [props.userData]);
   return (
     <div className={style.dashboardContainer}>
       <Head>
