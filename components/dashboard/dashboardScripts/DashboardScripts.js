@@ -14,6 +14,7 @@ import NewTemplateMain from "./NewTemplateMain/NewTemplateMain";
 import DottedStyles from "./SelectButtonStyles/DottedStyles";
 import regeneratorRuntime from "regenerator-runtime";
 import AllSCRIPTData from "../dummydata/dummyscripts";
+import { SpinnerComponent } from "react-element-spinner";
 
 /**
  * @description this function gets the data asyncronously
@@ -53,27 +54,32 @@ const DashboardScripts = (props) => {
   const [selectedComponent, setSelectedComponent] = useState(null);
   console.log(selectedComponent);
 
+  const [isLoading, setLoading] = useState(false);
+
   /**
    *
    * @param {any} props pass USERID as props
    */
   async function getDataFromApi(props) {
-    // axios
-    //   .post(API_LINK + "/scripts/getScripts", { USERID: USERID })
-    //   .then((response) => {
-    //     const { data } = response;
-    //     console.log(data);
-    //     props.dashboardFetchScript(data);
-    //     props.changeTotalScripts(data.length);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     return 400;
-    //   });
+    setLoading(true)
+    axios
+      .get(process.env.NEXT_PUBLIC_API_URL + "/script/getmyscript")
+      .then((response) => {
+        const { data } = response;
+        console.log(data.script);
+        props.dashboardFetchScript(data.script);
+        props.changeTotalScripts(data.script.length);
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false)
+        return 400;
+      });
 
-    const data = AllSCRIPTData;
-    props.dashboardFetchScript(data);
-    props.changeTotalScripts(data.length);
+    // const data = AllSCRIPTData;
+    // props.dashboardFetchScript(data);
+    // props.changeTotalScripts(data.length);
     // console.log(data);
   }
 
@@ -194,6 +200,7 @@ const DashboardScripts = (props) => {
   if (selectedComponent === "Summary") {
     return (
       <div id="Summary">
+       
         <div className={styles.dashboardScriptsSummary}>
           <Header />
           <div
@@ -225,6 +232,7 @@ const DashboardScripts = (props) => {
   }
   return (
     <div id="Scripts">
+    <SpinnerComponent loading={isLoading} position="global" />
       <AllScripts
         minPage={minPage}
         totalScripts={totalScripts}

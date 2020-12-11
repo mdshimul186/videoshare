@@ -4,6 +4,11 @@ import styles from "./NewSummaryMain.module.css";
 import Select from "react-select";
 import VideoPreviewModal from "../../../modals/VideoPreviewModal/VideoPreviewModal";
 import ThemesModal from "../../../modals/ThemesModal/ThemesModal";
+import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { SpinnerComponent } from "react-element-spinner";
+
+
 const NewSummaryMain = ({
 	handleSelectValue,
 	DropdownIndicator,
@@ -27,6 +32,61 @@ const NewSummaryMain = ({
 	const themeCloseModal = () => {
 		setThemeModalIsOpen(false);
 	};
+
+
+	const [title, setTitle] = useState("")
+	const [summary1, setSummary1] = useState("")
+	const [summary2, setSummary2] = useState("")
+
+	const [isLoading, setLoading] = useState(false);
+	const dispatch = useDispatch()
+
+
+
+
+
+	const handleSave = (type) => {
+		setLoading(true)
+		let options = [
+			{
+				title: "summary1",
+				position: 1,
+				value: summary1,
+				duration: 0
+			},
+			{
+				title: "summary2",
+				position: 2,
+				value: summary2,
+				duration: 0
+			}
+		]
+
+
+		let data = {
+			title,
+			options: options,
+			status: type
+		}
+
+		axios.post(process.env.NEXT_PUBLIC_API_URL + "/script/createsummary", data)
+			.then(res => {
+				console.log(res.data.script)
+				setTitle("")
+				setSummary1("")
+				setSummary2("")
+				setLoading(false)
+				dispatch({
+					type: "ADD_NEW_SCRIPT",
+					payload: res.data.script
+				})
+			})
+			.catch(err => {
+				console.log(err)
+				setLoading(false)
+			})
+	}
+
 	return (
 		<div
 			style={{
@@ -35,11 +95,12 @@ const NewSummaryMain = ({
 				width: "100%",
 			}}
 		>
-			<div className={styles.newScript}>
-				<div className={styles.newScriptMain}>
+			<SpinnerComponent loading={isLoading} position="global" />
+			<div >
+				<div>
 					<div className={`flex-row ${styles.newSummaryTitleGroup}`}>
 						<p className={styles.newScriptTitle}>New summary</p>
-						<Select
+						{/* <Select
 							onChange={handleSelectValue}
 							components={{ DropdownIndicator }}
 							className="react-select-container"
@@ -49,41 +110,47 @@ const NewSummaryMain = ({
 							options={newScriptOptions}
 							value={selectedOption}
 							defaultValue={selectedOption}
-						/>
+						/> */}
 					</div>
 					<div className={styles.newSummaryContent}>
 						<div className="flex-row">
-							<div className={styles.newSummaryInputGroup}>
-								<p className={styles.newSummaryName}>Summary Name</p>
+							<div style={{ marginBottom: "20px" }} className={styles.newSummaryInputGroup}>
+								<p style={{ marginBottom: "10px" }} className={styles.newSummaryName}>Summary Name</p>
 								<input
 									className={styles.newSummaryInput}
 									placeholder="Sales Meeting"
+									onChange={(e) => setTitle(e.target.value)}
+									value={title}
 								></input>
 							</div>
-							<div className={styles.newSummaryDuration}>
-								{/* set state inside here */}
+							{/* <div className={styles.newSummaryDuration}>
+								
 								<p className={styles.scriptRecordDurationText}>00:00:00</p>
-							</div>
-							<p className={styles.newSummaryDraft}>Save as Draft</p>
+							</div> */}
+							{/* <p className={styles.newSummaryDraft}>Save as Draft</p> */}
 						</div>
 						<div className={styles.summaryPoints}>
 							<div className={styles.summaryPointsInputGroup}>
-								<p className={styles.summaryPointText}>Point 1</p>
-								<input
+								<p className={styles.summaryPointText}>Summary 1</p>
+								<textarea
 									className={styles.summaryPointInput}
 									placeholder="Body"
-								></input>
+									onChange={(e) => setSummary1(e.target.value)}
+									value={summary1}
+								></textarea>
 							</div>
 							<div
 								className={`${styles.summaryPointsInputGroup} ${styles.summaryInputMargin}`}
 							>
-								<p className={styles.summaryPointText}>Point 2</p>
-								<input
+								<p className={styles.summaryPointText}>Summary 2</p>
+								<textarea
 									className={styles.summaryPointInput}
 									placeholder="Body"
-								></input>
+									onChange={(e) => setSummary2(e.target.value)}
+									value={summary2}
+								></textarea>
 							</div>
-							<div
+							{/* <div
 								className={`${styles.summaryPointsInputGroup} ${styles.summaryInputMargin}`}
 							>
 								<p className={styles.summaryPointText}>Point 3</p>
@@ -91,14 +158,18 @@ const NewSummaryMain = ({
 									className={styles.summaryPointInput}
 									placeholder="Body"
 								></input>
-							</div>
+							</div> */}
+							<div className={styles.recordAndDraftWrapper}>
+							<p onClick={() => handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>
+							<button onClick={() => handleSave("saved")} className={styles.newScriptSave}>Save</button>
 						</div>
-						<button className={styles.summaryPlusButton}>+</button>
+						</div>
+						
 					</div>
 				</div>
-				<button className={styles.newScriptRecordVideo}>Record Video</button>
+
 			</div>
-			<div className={styles.newScriptRight}>
+			{/* <div className={styles.newScriptRight}>
 				<VideoPreviewModal
 					vpmModalIsOpen={vpmModalIsOpen}
 					vpmCloseModal={vpmCloseModal}
@@ -141,7 +212,7 @@ const NewSummaryMain = ({
 						/>
 					</button>
 				</div>
-				{/* add divider here */}
+				
 				<div className={styles.newScriptTitles}>
 					<p className={styles.newScriptTitleLabel}>Titles</p>
 					<button className={styles.newScriptLowerThirdBtn}>
@@ -181,7 +252,7 @@ const NewSummaryMain = ({
 						alt="newScriptPreviewVideo"
 					/>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

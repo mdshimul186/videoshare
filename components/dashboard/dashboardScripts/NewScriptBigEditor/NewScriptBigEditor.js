@@ -8,21 +8,17 @@ const NewScriptBigEditor = ({
 	transcript,
 	reset,
 	textFileData,
+	notevalue,
+	handleNewScriptEditorChange
 }) => {
-	const handleNewScriptEditorChange = (e) => {
-		console.log("Content was updated:", e.target.getContent());
-		if (e.target.getContent() == "") {
-			console.log("no value");
-			reset();
-		}
-	};
+	
 	return (
 		<div id="tiny" className={styles.newScriptTextEditor}>
 			<Editor
 				outputFormat="text"
 				className={styles.newScriptTextEditorContent}
 				initialValue={"<p class='newScriptTextEditorContent'>Body</p>"}
-				value={transcript || textFileData}
+				value={notevalue}
 				init={{
 					formats: {
 						// Changes the default format for h1 to have a class of heading

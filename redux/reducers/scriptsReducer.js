@@ -37,6 +37,11 @@ const scriptsReducer = (
 			} else {
 				return state;
 			}
+		case "ADD_NEW_SCRIPT":
+				return {
+				  ...state,
+				  scriptData: [action.payload,...state.scriptData],
+				};
 		case DASHBOARD_FETCH_SCRIPT:
 			return {
 				...state,

@@ -43,7 +43,7 @@ const SettingsContentButton = ({
 				<a href="#/">ACCOUNT</a>
 			</div>
 
-			<div
+			{/* <div
 				onClick={() => {
 					settingsBrandingAccount();
 				}}
@@ -54,7 +54,7 @@ const SettingsContentButton = ({
 				}
 			>
 				<a href="#/">BRANDING</a>
-			</div>
+			</div> */}
 
 			{
 				userData && userData.accessType && userData.accessType.template &&
@@ -75,7 +75,7 @@ const SettingsContentButton = ({
 			}
 
 
-
+{/* 
 			<div
 				onClick={() => {
 					settingsLandingAccount();
@@ -87,7 +87,7 @@ const SettingsContentButton = ({
 				}
 			>
 				<a href="#/">LANDING PAGES</a>
-			</div>
+			</div> */}
 		</div>
 	);
 };

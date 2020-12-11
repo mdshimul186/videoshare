@@ -426,23 +426,26 @@
 	height: 64px;
 }
 .scriptTitleInput {
-	background: #fcfdfe;
-	border: 1px solid #f0f1f7;
-	box-sizing: border-box;
-	border-radius: 8px;
+	width: 318px;
+	height: 42px;	
 	font-family: "Mulish";
 	font-style: normal;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 14px;
 	line-height: 20px;
+	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
-	color: #4b506d;
-	opacity: 0.4;
-	width: 318px;
-	height: 42px;
-	margin-top: 22px;
+	/* grayscale / gray dark */
+	background: #f0f1f7;
+	opacity: 1;
 	outline: none;
-	text-indent: 16px;
+	border: 1px solid rgb(202, 202, 202);
+	padding-left: 15px;
+	border-radius: 8px;
+
+}
+.scriptTitleInput::placeholder{
+	color: #4b506d; 
 }
 .scriptRecord {
 	width: 12.31px;
@@ -477,11 +480,12 @@
 	margin-left: 15.69px;
 	margin-top: 22px;
 }
-.newScriptRecordVideo {
-	background: #eb5757;
+.newScriptSave {
+	background:#27AE60;
+	;
 	box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
 	border-radius: 8px;
-	width: 200px;
+	width: 100px;
 	height: 40px;
 	border: none;
 	outline: none;
@@ -1139,16 +1143,23 @@
 }
 .importButton {
 	background-color: #0182fe;
-	width: 174px;
-	height: 42px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	color: white;
-	border-radius: 8px;
-	margin-left: 14px;
-	margin-top: 20px;
+    width: 174px;
+    height: 42px;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    flex-direction: row;
+    -moz-box-pack: space-evenly;
+    justify-content: space-evenly;
+    -moz-box-align: center;
+    align-items: center;
+    color: white;
+    border-radius: 8px;
+    margin-left: 239px;
+    margin-top: -23px;
+    /* float: right; */
+    padding: 0 20px;
 }
 .resetButton {
 	margin-left: 15px;
@@ -1171,9 +1182,9 @@
 .recordAndDraftWrapper {
 	display: flex;
 	flex-direction: row;
-	width: 321px;
+	width: 221px;
 	height: 40px;
-	margin-left: 700px;
+	margin-left: 800px;
 	justify-content: space-between;
 	align-items: center;
 }

@@ -58,7 +58,7 @@
 	background: #fcfdfe;
 	/* grayscale / gray lightest */
 
-	border: 1px solid #f0f1f7;
+	border: 1px solid #C5C7CD;
 	box-sizing: border-box;
 	border-radius: 8px;
 	outline: none;
@@ -611,23 +611,22 @@
 	margin-bottom: 6px;
 }
 .newTemplateInput {
-	background: #fcfdfe;
-	margin-top: 0;
-	border: 1px solid #f0f1f7;
-	box-sizing: border-box;
-	border-radius: 8px;
-	font-family: Mulish;
+	width: 335px;
+	height: 42px;
+	font-family: "Mulish";
 	font-style: normal;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 14px;
 	line-height: 20px;
+	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
-	color: #4b506d;
-	opacity: 0.4;
-	width: 318px;
-	height: 42px;
-	text-indent: 16px;
+	/* grayscale / gray dark */
+	background: #f0f1f7;
+	opacity: 1;
 	outline: none;
+	border: 1px solid rgb(202, 202, 202);
+	padding-left: 15px;
+	border-radius: 8px;
 }
 .NewTemplateOpeningSaveWrapper {
 	width: 769px;
@@ -1147,4 +1146,98 @@
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
+}
+.recordAndDraftWrapper {
+	display: -moz-box;
+    display: flex;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    flex-direction: row;
+    width: 221px;
+    height: 40px;
+    margin-left: 825px;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -moz-box-align: center;
+    align-items: center;
+    margin-top: 31px;
+}
+.saveAsDraft {
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.2px;
+	color: #9fa2b4;
+	cursor: pointer;
+	margin: 0;
+}
+.newScriptSave {
+	background:#27AE60;
+	;
+	box-shadow: 0px 4px 12px rgba(175, 235, 200, 0.42);
+	border-radius: 8px;
+	width: 100px;
+	height: 40px;
+	border: none;
+	outline: none;
+	font-family: Mulish;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.2px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.summaryPoints {
+	width: 769px;
+	height: 142px;
+	margin-left: 32px;
+	margin-right: 30px;
+	margin-top: 0;
+	margin-bottom: 13px;
+}
+.summaryPointText {
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	color: #9fa2b4;
+	height: 16px;
+}
+.summaryPointsInputGroup {
+	display: flex;
+	flex-direction: column;
+	margin-left: 29px;
+	
+}
+.templateInput {
+	width: 1000px;
+	height: 73px;
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+	letter-spacing: 0.3px;
+	/* grayscale / gray dark */
+	background: #f0f1f7;
+	opacity: 1;
+	outline: none;
+	border: 1px solid rgb(202, 202, 202);
+	padding-left: 14px;
+	border-radius: 8px;
+}
+
+.summaryInputMargin {
+	margin-top: 16px;
 }

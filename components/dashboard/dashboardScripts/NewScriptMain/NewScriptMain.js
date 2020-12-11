@@ -8,6 +8,9 @@ import RecordVoice from "../RecordVoice/RecordVoice";
 import NewScriptBigEditor from "../NewScriptBigEditor/NewScriptBigEditor";
 import NewScriptSmallEditor from "../NewScriptSmallEditor/NewScriptSmallEditor";
 import regeneratorRuntime from "regenerator-runtime";
+import axios from 'axios'
+import { SpinnerComponent } from "react-element-spinner";
+import {useDispatch} from 'react-redux'
 
 const NewScriptMain = ({
   // REACT SPEECH
@@ -31,8 +34,8 @@ const NewScriptMain = ({
     setRecordMicOpen(!isRecordMicOpen);
   };
   const handleResetAll = () => {
-    reset();
-    handleResetTranscript();
+    //reset();
+    //handleResetTranscript();
   };
   const handleTextFile = async (e) => {
     console.log("fires");
@@ -46,8 +49,52 @@ const NewScriptMain = ({
     };
     reader.readAsText(e.target.files[0]);
   };
+
+  const dispatch = useDispatch()
+
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [note, setNote] = useState('')
+  const [isLoading, setLoading] = useState(false);
+
+
+
+  const handleScriptEditorChange = (e) => {
+		console.log("Content was updated:", e.target.getContent());
+		setNote(e.target.getContent())
+  };
+  
+
+  const handleSave=(type)=>{
+    setLoading(true)
+    let data= {
+      title,
+      description,
+      category:"script",
+      status:type,
+      note
+    }
+    axios.post(process.env.NEXT_PUBLIC_API_URL+'/script/createscript',data)
+    .then(res=>{
+      console.log(res.data.script)
+      dispatch({
+        type:"ADD_NEW_SCRIPT",
+        payload:res.data.script
+      })
+      setNote("")
+      setTitle("")
+      setDescription("")
+      setLoading(false)
+    })
+    .catch(err=>{
+      setLoading(false)
+      console.log(err)
+    })
+  }
+
   return (
     <div className={styles.newScript} id="#newScript">
+    <SpinnerComponent loading={isLoading} position="global" />
       <div className={styles.newScriptMain}>
         <div className={`flex-row ${styles.newScriptTitleGroup}`}>
           <p className={styles.newScriptTitle}>New Draft</p>
@@ -72,6 +119,16 @@ const NewScriptMain = ({
             <input
               className={styles.scriptTitleInput}
               placeholder="Script title"
+              onChange={(e)=>setTitle(e.target.value)}
+              value={title}
+            />
+          </div>
+          <div style={{marginLeft:"36px"}} className={styles.scriptTitleInputGroup}>
+            <input
+              className={styles.scriptTitleInput}
+              placeholder="Script description"
+              onChange={(e)=>setDescription(e.target.value)}
+              value={description}
             />
           </div>
           <label className={styles.importButton}>
@@ -82,9 +139,9 @@ const NewScriptMain = ({
               type="file"
               onChange={handleTextFile}
             />
-            <img src="check.svg"></img>
+            <img style={{marginLeft:"5px"}} src="check.svg"></img>
           </label>
-          <img
+          {/* <img
             onClick={handleRecordMic}
             className={styles.scriptRecord}
             alt="mic record"
@@ -94,9 +151,9 @@ const NewScriptMain = ({
             className={styles.scriptVerticalLine}
             alt="scriptVerticalLine"
             src="/vertical.svg"
-          />
-          <div className={styles.recordDuration}>
-            {/* set state inside here */}
+          /> */}
+          {/* <div className={styles.recordDuration}>
+             set state inside here 
             <p
               className={styles.scriptRecordDurationText}
             >{`${hours
@@ -104,13 +161,13 @@ const NewScriptMain = ({
               .padStart(2, "0")}:${minutes
               .toString()
               .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}</p>
-          </div>
-          <button
+          </div> */}
+          {/* <button
             className={styles.resetButton}
             onClick={() => handleResetAll()}
           >
             Reset
-          </button>
+          </button> */}
           {/* <p className={styles.saveAsDraft}>Save as Draft</p> */}
         </div>
         {isRecordMicOpen ? (
@@ -141,13 +198,15 @@ const NewScriptMain = ({
           <NewScriptBigEditor
             isRecording={isRecording}
             transcript={transcript}
+            notevalue={note}
             textFileData={textFileData}
+            handleNewScriptEditorChange={handleScriptEditorChange}
           />
         )}
       </div>
       <div className={styles.recordAndDraftWrapper}>
-        <p className={styles.saveAsDraft}>Save as draft</p>
-        <button className={styles.newScriptRecordVideo}>Record Video</button>
+        <p onClick={()=>handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>
+        <button onClick={()=>handleSave("saved")} className={styles.newScriptSave}>Save</button>
       </div>
     </div>
   );

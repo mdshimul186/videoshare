@@ -10,7 +10,7 @@ const AllScriptsTable = ({ scriptToRender }) => {
   const scripts = scriptToRender;
 
   const AllScriptsList = scripts.map((script) => {
-    const date = new Date(script.date);
+    const date = new Date(script.createdAt);
     const day = date.getDate();
     const month = date.toLocaleString("default", { month: "long" });
     const year = date.getFullYear();
@@ -21,26 +21,26 @@ const AllScriptsTable = ({ scriptToRender }) => {
     const time = `${hh}:${mm} ${amorpm}`;
     const finaldate = `${time}, ${month} ${day}, ${year}`;
     return (
-      <React.Fragment key={script.SCRIPTID}>
+      <React.Fragment key={script._id}>
         <div className={`flex-row ${style.AllScriptTable}`}>
-          <p className={style.title}>{script.TITLE}</p>
+          <p className={style.title}>{script.title}</p>
           <p
             className={`${style.status} ${
-              script.STATUS === "RECORDED" ? style.statusRecorded : ""
-            } ${script.STATUS === "DRAFT" ? style.statusDraft : ""}
-			${script.STATUS === "SAVED" ? style.statusSaved : ""}
+              script.status === "RECORDED" ? style.statusRecorded : ""
+            } ${script.status === "draft" ? style.statusDraft : ""}
+			${script.status === "saved" ? style.statusSaved : ""}
 			`}
           >
-            {script.STATUS}
+            {script.status}
           </p>
           <p
             className={`${style.scriptType} ${
-              script.SCRIPTTYPE === "SUMMARY" ? style.scriptTypeSummary : ""
+              script.category === "summary" ? style.scriptTypeSummary : ""
             } ${
-              script.SCRIPTTYPE === "TEMPLATE" ? style.scriptTypeTemplate : ""
-            } ${script.SCRIPTTYPE === "SCRIPT" ? style.scriptTypeScript : ""}`}
+              script.category === "template" ? style.scriptTypeTemplate : ""
+            } ${script.category === "script" ? style.scriptTypeScript : ""}`}
           >
-            {script.SCRIPTTYPE}
+            {script.category}
           </p>
           <p className={style.date}>{finaldate}</p>
         </div>

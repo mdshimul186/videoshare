@@ -1,6 +1,6 @@
 // This file processes the objects into a list
 
-import React from "react";
+import React,{useState,useEffect} from "react";
 import tableStyle from "./TemplatesList.module.css";
 
 /**
@@ -9,13 +9,28 @@ import tableStyle from "./TemplatesList.module.css";
  * @returns {any}
  */
 const TemplateList = ({ templates }) => {
-  const templateList = templates.length ? (
-    templates.map((template) => {
+  const [total ,setTotal] = useState([])
+  const [render ,setRender] = useState([])
+  const [totalItems, setTotalItems] = useState(0)
+  const [current, setCurrent] = useState(0)
+
+  useEffect(()=>{
+      setTotal(templates)
+      setTotalItems(templates.length)
+      setRender(templates.slice(0,4))
+  },[templates])
+
+  const templateToRender=()=>{
+
+  }
+ 
+  const templateList = render.length ? (
+    render.map((template) => {
       return (
         <React.Fragment>
-          <tr key={template.id} className={tableStyle.flexRow}>
+          <tr key={template._id} className={tableStyle.flexRow}>
             <td className={tableStyle.RowData}>{template.title}</td>
-            <td className={tableStyle.RowData}>{template.date}</td>
+            <td className={tableStyle.RowData}>date</td>
             <td className={tableStyle.RowTripleDot}>
               <img src="/tripledot.svg" alt="tripledot"></img>
             </td>
