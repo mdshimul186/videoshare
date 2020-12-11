@@ -154,8 +154,13 @@ const Dashboard = (props) => {
       setUsersLinkActive(true)
     }else if(props.userData && props.userData.role === 'master'){
       setScriptLinkActive(true)
-    }else{
-      setDashboardLinkActive(true)
+    }else if(props.userData && props.userData.role === 'user'){
+      if(props.userData.accessType && props.userData.accessType.script){
+        setScriptLinkActive(true)
+
+      }else{
+        setVideosLinkActive(true)
+      }
     }
     return setLoading(false);
   }, [props.userData]);

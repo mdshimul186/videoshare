@@ -45,7 +45,7 @@ const MainSideBar = ({
         <div className={style.dashboardSideBarLinkWrapper}>
 
         {
-          userData && userData.role === 'user' &&
+          userData && userData.role === 'hide' &&
           (
             <div onClick={activateDashboard}>
             <SideBarLink
@@ -68,7 +68,7 @@ const MainSideBar = ({
           
 
           {
-            userData && userData.role === 'user' &&
+            userData && userData.role === 'hide' &&
             (
               <div onClick={activateRecord}>
             <SideBarLink
