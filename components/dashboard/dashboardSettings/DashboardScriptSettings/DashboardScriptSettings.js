@@ -32,7 +32,9 @@ function DashboardScriptSettings() {
 	const [isLoading, setLoading] = useState(false);
 	const dispatch = useDispatch()
 	const {scriptData} = useSelector(state=>state.scripts)
-
+	
+	
+	const [selected, setSelected] = useState(null)
 
 	const [isTitleClickd, setIsTitleClickd] = useState(false)
 	const [isOpeningClicked, setisOpeningClicked] = useState(false)
@@ -106,10 +108,92 @@ function DashboardScriptSettings() {
 			payload:res.data.script
 		  })
 		  setTemplates([res.data.script,...templates])
+		  setSelected(null)
 		})
 		.catch(err=>{
 		  console.log(err)
+		  err && err.response && alert(err.response.data.error)
 		  setLoading(false)
+		})
+	  }
+
+
+	  const setValue=(script)=>{
+			setSelected(script)
+			setTitle(script.title)
+			setOpening(script.template[0].options[0].value)
+			setMiddle(script.template[0].options[1].value)
+			setEnd(script.template[0].options[2].value)
+	  }
+
+	  const handleEdit=(script)=>{
+		setLoading(true)
+		let options = [
+		  {
+			title:"opening",
+			position:1,
+			value:opening,
+			duration:0
+		  },
+		  {
+			title:"middle",
+			position:2,
+			value:middle,
+			duration:0
+		  },
+		  {
+			title:"end",
+			position:3,
+			value:end,
+			duration:0
+		  }
+		]
+		let data ={
+		  title,
+		  options:options,
+		  status:"saved"
+		}
+			axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/script/edittemplate/${script._id}/${script.template[0]._id}`,data)
+			.then(res=>{
+				console.log(res.data.script)
+				setSelected(null)
+				setTitle("")
+				setMiddle("")
+				setOpening("")
+				setEnd("")
+				setLoading(false)
+
+				let newTmp = [...templates]
+				let index = newTmp.findIndex(t=>t._id === res.data.script._id)
+				newTmp[index] = res.data.script
+				setTemplates(newTmp)
+			})
+			.catch(err=>{
+				err && err.response && alert(err.response.data.error)
+				setLoading(false)
+			})
+	  }
+
+
+	  const handleDelete=(script)=>{
+		  setLoading(true)
+		axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/script/deletetemplate/${script._id}/${script.template[0]._id}`)
+		.then(res=>{
+			setSelected(null)
+			setTitle("")
+			setMiddle("")
+			setOpening("")
+			setEnd("")
+			setLoading(false)
+
+			let newTmp = [...templates]
+			let index = newTmp.findIndex(t=>t._id === script._id)
+			newTmp.splice(index,1)
+			setTemplates(newTmp)
+		})
+		.catch(err=>{
+			err && err.response && alert(err.response.data.error)
+			setLoading(false)
 		})
 	  }
 	
@@ -161,13 +245,17 @@ function DashboardScriptSettings() {
 								/>
 							</div>
 							{/* <button className={style.ScriptButton}>+</button> */}
-							<button onClick={()=>handleSave("saved")} className={style.ScriptSaveButton}>Save</button>
+							{
+								selected ? <button onClick={()=>handleEdit(selected)} className={style.ScriptSaveButton}>Edit</button>:
+								 <button onClick={()=>handleSave("saved")} className={style.ScriptSaveButton}>Save</button>
+							}
+							
 						</div>
 						<div className="flex-column">
 							<p className={style.DashboardScriptsText}>
 								Current Script Templates
 							</p>
-							<TemplateList templates={templates} />
+							<TemplateList deletefunc={handleDelete} sendValue={setValue} templates={templates} />
 						</div>
 					</div>
 				</div>

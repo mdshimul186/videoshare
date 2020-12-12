@@ -25,7 +25,7 @@ const Header = (props) => {
       <div className={styles.dashboardUserWrapper}>
         <p
           className={styles.dashboardUsername}
-        >{`${userData.firstName} ${userData.lastName}`}</p>
+        >{`${userData.firstName} ${userData.lastName}`} ({userData.role})</p>
         <img
           className={styles.dashboardAvatar}
           src={userData.profilePicture || "/dashboardAvatar.svg"}

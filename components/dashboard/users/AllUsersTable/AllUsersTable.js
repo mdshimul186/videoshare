@@ -32,6 +32,7 @@ const customStyles = {
     lineHeight: "20px",
     letterSpacing: "0.2px",
     marginTop: "0",
+    textAlign:"left"
   }),
   control: () => ({
     // none of react-select's styles are passed to <Control />
