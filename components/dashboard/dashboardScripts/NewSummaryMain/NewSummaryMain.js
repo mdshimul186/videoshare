@@ -16,6 +16,13 @@ const NewSummaryMain = ({
 	newScriptOptions,
 	selectedOption,
 }) => {
+	const options = [
+		{ value: 'seles', label: 'Seles template' },
+		{ value: 'welcome', label: 'Welcome template' },
+		{ value: 'newsletter', label: 'News letter' }
+	  ]
+
+	  
 	const [vpmModalIsOpen, setVpmModalIsOpen] = React.useState(false);
 	function vpmOpenModal() {
 		setVpmModalIsOpen(true);
@@ -122,6 +129,9 @@ const NewSummaryMain = ({
 									onChange={(e) => setTitle(e.target.value)}
 									value={title}
 								></input>
+							</div>
+							<div className={styles.importTemp}>
+							<Select placeholder="import template" options={options} />
 							</div>
 							{/* <div className={styles.newSummaryDuration}>
 								

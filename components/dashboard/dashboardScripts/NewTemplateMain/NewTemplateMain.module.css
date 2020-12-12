@@ -611,7 +611,7 @@
 	margin-bottom: 6px;
 }
 .newTemplateInput {
-	width: 335px;
+	width: 435px;
 	height: 42px;
 	font-family: "Mulish";
 	font-style: normal;
@@ -621,7 +621,7 @@
 	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
 	/* grayscale / gray dark */
-	background: #f0f1f7;
+	background: #FCFDFE;	
 	opacity: 1;
 	outline: none;
 	border: 1px solid rgb(202, 202, 202);
@@ -1221,7 +1221,7 @@
 }
 .templateInput {
 	width: 1000px;
-	height: 73px;
+	height: 103px;
 	font-family: "Mulish";
 	font-style: normal;
 	font-weight: bold;
@@ -1230,14 +1230,21 @@
 	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
 	/* grayscale / gray dark */
-	background: #f0f1f7;
+	background: #FCFDFE;
 	opacity: 1;
 	outline: none;
 	border: 1px solid rgb(202, 202, 202);
 	padding-left: 14px;
+	padding-top: 7px;
 	border-radius: 8px;
 }
 
 .summaryInputMargin {
 	margin-top: 16px;
+}
+.importTemp{
+	width: 200px !important;
+    position: absolute;
+    right: 27px;
+    top: 272px;
 }

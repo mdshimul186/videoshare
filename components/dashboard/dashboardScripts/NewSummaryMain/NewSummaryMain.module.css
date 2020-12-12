@@ -742,7 +742,7 @@
 	margin-bottom: 0;
 }
 .newSummaryInput {
-	width: 335px;
+	width: 435px;
 	height: 42px;
 	font-family: "Mulish";
 	font-style: normal;
@@ -752,7 +752,7 @@
 	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
 	/* grayscale / gray dark */
-	background: #f0f1f7;
+	background: #FCFDFE;
 	opacity: 1;
 	outline: none;
 	border: 1px solid rgb(202, 202, 202);
@@ -806,12 +806,12 @@
 	color: #9fa2b4;
 	height: 16px;
 }
-.summaryPointsInputGroup {
+/* .summaryPointsInputGroup {
 	
-}
+} */
 .summaryPointInput {
 	width: 1000px;
-	height: 73px;
+	height: 103px;
 	font-family: "Mulish";
 	font-style: normal;
 	font-weight: bold;
@@ -820,11 +820,12 @@
 	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
 	/* grayscale / gray dark */
-	background: #f0f1f7;
+	background: #FCFDFE;
 	opacity: 1;
 	outline: none;
 	border: 1px solid rgb(202, 202, 202);
 	padding-left: 15px;
+	padding-top: 7px;
 	border-radius: 8px;
 }
 .summaryPointInput::placeholder {
@@ -1188,4 +1189,10 @@
     -moz-box-align: center;
     align-items: center;
     margin-top: 31px;
+}
+.importTemp{
+	width: 200px !important;
+    position: absolute;
+    right: 25px;
+    top: 262px;
 }
