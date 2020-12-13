@@ -182,10 +182,21 @@ const Login = () => {
             </a> */}
             <GoogleLogin
               clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
-              buttonText="Login"
+              buttonText={<p className={LoginStyles.googleTxt}>Login</p>}
               onSuccess={responseGoogle}
               onFailure={responseGoogleFail}
               cookiePolicy={"single_host_origin"}
+              className={LoginStyles.btnGoogle}
+              render={renderProps => (
+                <a className={LoginStyles.btnGoogle} onClick={renderProps.onClick}>
+              <img
+                className={LoginStyles.googleIcon}
+                alt="google icon"
+                src="google-logo.svg"
+              ></img>
+              Google
+            </a>
+                    )}
             />
             ,
           </div>

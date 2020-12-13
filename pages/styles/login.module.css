@@ -121,6 +121,16 @@
 
     color: #4b4b4b;
   }
+  .googleTxt{
+    color: #4b4b4b;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-family: "SF Pro Text";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+  }
   .registerMessage {
     /* Reg 14 (0.3 px) */
 

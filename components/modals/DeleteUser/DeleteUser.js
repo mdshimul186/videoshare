@@ -18,6 +18,7 @@ const IOSSwitch = withStyles((theme) => ({
         width: 52,
         height: 26,
         padding: 0,
+        borderRadius: 57,
         margin: theme.spacing(1),
     },
     switchBase: {
@@ -134,6 +135,10 @@ const DeleteUser = ({
               dispatch({
                 type: "DELETE_USER",
                 payload: userid
+              })
+              dispatch({
+                type:"INSERT_USER_DATA",
+                payload:res.data.user
               })
               setLoading(false)
               setClosed(true)
