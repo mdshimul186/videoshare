@@ -207,7 +207,7 @@ const AllScripts = (props) => {
         <div className={styles.allScriptsWrapper}>
           <p className={styles.allScripts}>All scripts</p>
           <div className={styles.inputWithSearchGroup}>
-            <img
+            {/* <img
               className={styles.searchIcon}
               alt="search"
               src="/scriptsearch.svg"
@@ -215,7 +215,7 @@ const AllScripts = (props) => {
             <input
               className={styles.scriptSearchInput}
               placeholder="Search script"
-            ></input>
+            ></input> */}
           </div>
           {/* <button
 						onClick={() => props.toggleNewScriptButton()}

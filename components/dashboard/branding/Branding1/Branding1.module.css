@@ -18,20 +18,23 @@
     border-radius: 8px;
   }
   .brandingText {
-    font-family: Mulish;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 0.3px;
-    color: #4b506d;
-    margin-left: 18px;
-    border: 1px solid #c5c7cd;
     width: 356px;
-    padding: 10px;
+    height: 42px;	
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    letter-spacing: 0.3px;
+    /* grayscale / gray dark */
+    background: #FCFDFE;
+    opacity: 1;
+    outline: none;
+    border: 1px solid #C5C7CD;
+    padding-left: 15px;
     border-radius: 8px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 25px 0 25px 15px;
   }
   .row1 {
     display: flex;
@@ -90,10 +93,10 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
   }
   .logo {
-    margin: 10px;
+    margin: 7px;
     color: white;
-    width: 300px;
     max-height: 140px;
+    object-fit: contain;
   }
   .backgroundTitle {
     font-family: Mulish;
@@ -135,6 +138,7 @@
     letter-spacing: 0.2px;
     color: #ffffff;
     text-transform: uppercase;
+    margin: 0;
   }
   .plus {
     border: none;

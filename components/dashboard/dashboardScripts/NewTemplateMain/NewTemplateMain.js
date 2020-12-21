@@ -126,7 +126,7 @@ const NewTemplateMain = ({
            
           </div>
           <div className={styles.importTemp}>
-              <Select placeholder="import summary" options={options} />
+              <Select placeholder="import template" options={options} />
             </div>
           {/* <div className={styles.recordDuration}>
              set state inside here 

@@ -118,3 +118,9 @@ input {
   /* Microsoft Edge */
   font-weight: bold;
 }
+.dropdown-toggle::after{
+  display: none;
+}
+button:focus{
+  outline: none;
+}

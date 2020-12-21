@@ -6,6 +6,7 @@ import { SpinnerComponent } from "react-element-spinner";
 import { ChromePicker } from "react-color";
 import hexRgb from "hex-rgb"
 
+
 const Branding1 = () => {
   const { auth } = useSelector((state) => state);
 
@@ -15,6 +16,7 @@ const Branding1 = () => {
   const [isPassModal, setPassModal] = useState(true);
 
   const [brandingId, setBrandingId] = useState("")
+  const [brandingName, setBrandingName] = useState("")
 
   const [showOpeningLogoColourPicker, setShowOpeningLogoColourPicker,] = useState(false);
   const [openingLogoColourPicker, setOpeningLogoColourPicker] = useState({
@@ -57,8 +59,10 @@ const Branding1 = () => {
   const [openingLogoUrl, setOpeningLogoUrl] = useState("")
   const [selectedClosingLogo, setSelectedClosingLogo] = useState("")
   const [closingLogoUrl, setClosingLogoUrl] = useState("")
+  const [selectedShoulderLogo, setSelectedShoulderLogo] = useState("")
+  const [shoulderLogoUrl, setShoulderLogoUrl] = useState("")
 
-  const [font, setFont] = useState("font1")
+  const [font, setFont] = useState("OpenSans")
 
 
   useEffect(() => {
@@ -75,9 +79,10 @@ const Branding1 = () => {
       axios.get(`${process.env.NEXT_PUBLIC_API_URL}/branding/getbrandinginfo/${brandingId}`)
         .then(res => {
           let { branding } = res.data
-          console.log(branding);
+          setBrandingName(branding.brandingName)
           setOpeningLogoUrl(branding.firstLogoURL)
           setClosingLogoUrl(branding.secondLogoURL)
+          setShoulderLogoUrl(branding.thirdLogoURL)
 
           setOpeningLogoColourPicker({
             ...openingLogoColourPicker,
@@ -128,10 +133,13 @@ const Branding1 = () => {
 
 
   const handleSaveBranding = () => {
+    console.log(brandingName)
     setLoading(true)
     let formData = new FormData()
+    formData.append("brandingName", brandingName)
     formData.append("firstLogo", selectedOpeningLogo)
     formData.append("secondLogo", selectedClosingLogo)
+    formData.append("thirdLogo", selectedShoulderLogo)
     formData.append("firstBackgroundHEX", openingLogoColourPicker.hex)
     formData.append("firstBackgroundRGB", openingLogoColourPicker.rgb)
 
@@ -152,7 +160,7 @@ const Branding1 = () => {
     formData.append("textRoleBackgroundRGB", roleBackgroundColourPicker.rgb)
 
     formData.append("fontName", font)
-    formData.append("brandingName", "branding1")
+  
 
     axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/branding/editbranding/${brandingId}`, formData)
       .then(branding => {
@@ -160,6 +168,7 @@ const Branding1 = () => {
         alert("saved successfully")
       })
       .catch(err => {
+        setLoading(false)
         err && err.response && alert(err.response.data.error)
       })
 
@@ -170,7 +179,11 @@ const Branding1 = () => {
     <div className={styles.brandingContainer}>
       <SpinnerComponent loading={isLoading} position="global" />
 
-      <p className={styles.brandingText}>Branding 1</p>
+      <input
+              className={styles.brandingText}
+              onChange={(e)=>setBrandingName(e.target.value)}
+              value={brandingName}
+      />
       <div className={styles.content}>
         <div className={styles.row1}>
           {/* 1st brand box */}
@@ -296,12 +309,16 @@ const Branding1 = () => {
           {/* --------------shoulder logo ---------------- */}
 
           <div className={styles.logoItemContainer}>
-            <div className={styles.logoInfo}>
+          <div className={styles.logoInfo}>
               <div className={styles.logoTitle}>SHOULDER LOGO</div>
-              <button className={styles.uploadButton}>UPLOAD</button>
+              <input onChange={(e) => setSelectedShoulderLogo(e.target.files[0])} type="file" accept='image/*' id='shoulderlogo' hidden></input>
+              <label htmlFor='shoulderlogo' className={styles.uploadButton}>UPLOAD</label>
             </div>
-            <div className={styles.logoContainer}>
-              {/* <p className={styles.logo}>VEVAMEDIA</p> */}
+            <div
+              style={{ background:"transparent" }}
+              className={styles.logoContainer}
+            >
+              <img className={styles.logo} src={selectedShoulderLogo ? URL.createObjectURL(selectedShoulderLogo) : shoulderLogoUrl}></img>
             </div>
           </div>
           {/* --------------ends shoulder logo ---------------- */}
@@ -464,8 +481,16 @@ const Branding1 = () => {
           </div>
           <div className={styles.inputContainer}>
             <select onChange={(e) => setFont(e.target.value)} value={font} className={styles.selectFont}>
-              <option value="font1">Font 1</option>
-              <option value="font2">Font 2</option>
+              <option value="OpenSans">Open Sans</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Raleway">Raleway</option>
+              <option value="Roboto">Roboto</option>
+              <option value="GreatVibes">Great Vibes</option>
+              <option value="BebasNeue">Bebas Neue</option>
+              <option value="AlexBrush">Alex Brush</option>
+              <option value="Quicksand">Quicksand</option>
+              <option value="Lato">Lato</option>
+              <option value="Pacifico">Pacifico</option>
             </select>
           </div>
           <div>

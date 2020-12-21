@@ -2,23 +2,33 @@
   .SideBarLinkStyle1:hover,
   .SideBarLinkStyle2:hover,
   .dashboardSidebarLowerLinks:hover {
+    display: flex;
+    flex-direction: row;
+    width: 255px;
+    height: 56px;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    color: white !important;
     font-family: "Mulish";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.2px;
-    margin-left: 0.5%;
+    /* margin-left: 0.5%; */
     text-decoration: none;
     outline: none;
-    background-color: rgba(159, 162, 180, 0.08);
-    border-top: 1px solid #000000;
+    background-color: #3E4049;
+    /* background: #9FA2B4;
+    opacity: 0.08; */
+    /* border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    border-right: 1px solid #000000;
-    border-left: 5px solid white;
+    border-right: 1px solid #000000; */
+    border-left: 3px solid #DDE2FF;
     box-sizing: border-box;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 99;
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
+    z-index: -1;
   }
   .dashboardLinkActive {
     display: flex;
@@ -28,28 +38,30 @@
     text-align: center;
     align-items: center;
     justify-content: flex-start;
-    color: white;
+    color: white !important;
     font-family: "Mulish";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.2px;
-    margin-left: 0.5%;
+    /* margin-left: 0.5%; */
     text-decoration: none;
     outline: none;
-    background-color: rgba(159, 162, 180, 0.08);
-    border-top: 1px solid #000000;
+    background-color: #3E4049;
+    /* background: #9FA2B4;
+    opacity: 0.08; */
+    /* border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    border-right: 1px solid #000000;
-    border-left: 5px solid white;
+    border-right: 1px solid #000000; */
+    border-left: 3px solid #DDE2FF;
     box-sizing: border-box;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 99;
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
+    z-index: -1;
   }
   .dashboardLinkActive a {
     text-decoration: none;
-    color: white;
+    color: white !important;
     margin-left: 10%;
     margin-bottom: 0%;
     /* Reg 16 (0.2 px) */
@@ -65,6 +77,7 @@
     /* sidebar / gray */
 
     color: #a4a6b3;
+    z-index: 1;
   }
 
   .dashboardLinkActive2 {

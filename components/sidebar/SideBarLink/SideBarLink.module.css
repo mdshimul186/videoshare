@@ -50,7 +50,7 @@
   .dashboardLinkActive a {
     text-decoration: none;
     color: white;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     margin-bottom: 0%;
     /* Reg 16 (0.2 px) */
     font-family: "Mulish";
@@ -257,8 +257,8 @@
     color: #eb5757;
   }
   .dashboardIcon1 {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     margin-top: -5px;
     margin-left: 15%;
   }

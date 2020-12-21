@@ -10,7 +10,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 29px;
   /* or 137% */
   letter-spacing: 0.2px;
   /* accent / default */
@@ -132,7 +132,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 29px !important;
   /* or 137% */
   letter-spacing: 0.2px;
   /* accent / default */

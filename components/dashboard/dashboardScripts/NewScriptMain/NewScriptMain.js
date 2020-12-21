@@ -12,6 +12,7 @@ import axios from 'axios'
 import { SpinnerComponent } from "react-element-spinner";
 import {useDispatch} from 'react-redux'
 
+
 const NewScriptMain = ({
   // REACT SPEECH
   handleRecording,
@@ -92,13 +93,19 @@ const NewScriptMain = ({
     })
   }
 
+  const options = [
+		{ value: 'seles', label: 'Seles template' },
+		{ value: 'welcome', label: 'Welcome template' },
+		{ value: 'newsletter', label: 'News letter' }
+	  ]
+
   return (
     <div className={styles.newScript} id="#newScript">
     <SpinnerComponent loading={isLoading} position="global" />
       <div className={styles.newScriptMain}>
         <div className={`flex-row ${styles.newScriptTitleGroup}`}>
           <p className={styles.newScriptTitle}>New Draft</p>
-          <Select
+          {/* <Select
             onChange={handleSelectValue}
             components={{
               IndicatorSeparator: () => null,
@@ -112,7 +119,7 @@ const NewScriptMain = ({
             value={selectedOption}
             defaultValue={selectedOption}
             placeholder="New Script"
-          />
+          /> */}
         </div>
         <div className={`flex-row ${styles.newScriptGroup}`}>
           <div className={styles.scriptTitleInputGroup}>
@@ -131,7 +138,11 @@ const NewScriptMain = ({
               value={description}
             />
           </div>
-          <label className={styles.importButton}>
+          <div className={styles.importButton} >
+          <Select placeholder="import template" options={options} />
+          </div>
+         
+          {/* <label className={styles.importButton}>
             Import
             <input
               accept=".txt"
@@ -140,7 +151,7 @@ const NewScriptMain = ({
               onChange={handleTextFile}
             />
             <img style={{marginLeft:"5px"}} src="check.svg"></img>
-          </label>
+          </label> */}
           {/* <img
             onClick={handleRecordMic}
             className={styles.scriptRecord}

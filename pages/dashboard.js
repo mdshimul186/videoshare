@@ -176,6 +176,8 @@ const Dashboard = (props) => {
       <Head>
         <script src="./tinymce.min.js"></script>
         <title>Dashboard</title>
+        
+    
       </Head>
       <SpinnerComponent loading={isLoading} position="global" />
 

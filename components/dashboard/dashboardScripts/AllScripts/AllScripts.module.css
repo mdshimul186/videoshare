@@ -28,12 +28,12 @@
   height: 40px;
   /* grayscale / extra light */
 
-  background: #fcfdfe;
+  /* background: #fcfdfe; */
   /* grayscale / gray lightest */
 
-  border: 1px solid #f0f1f7;
+  /* border: 1px solid #f0f1f7; */
   box-sizing: border-box;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 .searchIcon {
   height: 15px;

@@ -120,7 +120,7 @@ const NewSummaryMain = ({
 						/> */}
 					</div>
 					<div className={styles.newSummaryContent}>
-						<div className="flex-row">
+						<div style={{width:"100%"}} className="flex-row">
 							<div style={{ marginBottom: "20px" }} className={styles.newSummaryInputGroup}>
 								<p style={{ marginBottom: "10px" }} className={styles.newSummaryName}>Summary Name</p>
 								<input
@@ -131,7 +131,7 @@ const NewSummaryMain = ({
 								></input>
 							</div>
 							<div className={styles.importTemp}>
-							<Select placeholder="import template" options={options} />
+							<Select placeholder="import summary" options={options} />
 							</div>
 							{/* <div className={styles.newSummaryDuration}>
 								
@@ -170,8 +170,12 @@ const NewSummaryMain = ({
 								></input>
 							</div> */}
 							<div className={styles.recordAndDraftWrapper}>
+							<button className={styles.addBtn}><span style={{marginRight:"5px"}}>+</span>Add</button>
+							<div style={{display:"flex",width:"200px",justifyContent:"space-between",alignItems:"center"}}>
 							<p onClick={() => handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>
 							<button onClick={() => handleSave("saved")} className={styles.newScriptSave}>Save</button>
+							</div>
+							
 						</div>
 						</div>
 						

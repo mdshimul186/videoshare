@@ -759,6 +759,21 @@
 	padding-left: 15px;
 	border-radius: 8px;
 }
+.newSummaryInput::placeholder{
+	font-family: "Mulish";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+	
+	letter-spacing: 0.3px;
+	
+	/* grayscale / gray dark */
+	
+	color: #4B506D;
+	opacity: 0.4;
+}
 .newSummaryDuration {
 	width: 76px;
 	height: 24px;
@@ -771,7 +786,7 @@
 	margin-top: 80px;
 }
 .newSummaryContent {
-	width: 769px;
+	width: 100%;
 	height: 180px;
 }
 .newSummaryDraft {
@@ -1181,18 +1196,28 @@
     -moz-box-orient: horizontal;
     -moz-box-direction: normal;
     flex-direction: row;
-    width: 221px;
+    width: 1017px;
     height: 40px;
-    margin-left: 792px;
     -moz-box-pack: justify;
     justify-content: space-between;
     -moz-box-align: center;
     align-items: center;
     margin-top: 31px;
 }
+.addBtn{
+	background: #2F80ED;
+
+border-radius: 8px;
+width: 114px;
+height: 40px;
+border-radius: 8px;
+outline: none;
+border: none;
+color: white;
+}
 .importTemp{
 	width: 200px !important;
-    position: absolute;
-    right: 25px;
-    top: 262px;
+    margin-left: 500px;
+    margin-top: 79px;
+    
 }

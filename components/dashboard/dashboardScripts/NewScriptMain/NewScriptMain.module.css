@@ -315,7 +315,7 @@
 .newScriptTitleGroup {
 	width: 100%;
 	height: 40px;
-	margin-top: 26px;
+	margin-top: 6px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -355,7 +355,7 @@
 	margin-top: 38px;
 }
 .newScriptGroup {
-	width: 719px;
+	width: 100%;
 	height: 64px;
 	margin-top: 46px;
 	display: flex;
@@ -436,16 +436,28 @@
 	/* identical to box height, or 143% */
 	letter-spacing: 0.3px;
 	/* grayscale / gray dark */
-	background: #f0f1f7;
+	background: #FCFDFE;
 	opacity: 1;
 	outline: none;
-	border: 1px solid rgb(202, 202, 202);
+	border: 1px solid #C5C7CD;
 	padding-left: 15px;
 	border-radius: 8px;
 
 }
 .scriptTitleInput::placeholder{
-	color: #4b506d; 
+	font-family: "Mulish";
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+letter-spacing: 0.3px;
+
+/* grayscale / gray dark */
+
+color: #4B506D;
+opacity: 0.4;
 }
 .scriptRecord {
 	width: 12.31px;
@@ -1142,24 +1154,12 @@
 	flex-direction: column;
 }
 .importButton {
-	background-color: #0182fe;
-    width: 174px;
-    height: 42px;
-    display: -moz-box;
-    display: flex;
-    -moz-box-orient: horizontal;
-    -moz-box-direction: normal;
-    flex-direction: row;
-    -moz-box-pack: space-evenly;
-    justify-content: space-evenly;
-    -moz-box-align: center;
-    align-items: center;
-    color: white;
-    border-radius: 8px;
-    margin-left: 239px;
-    margin-top: -23px;
-    /* float: right; */
-    padding: 0 20px;
+	
+	width: 200px !important;
+    /* right: 25px; */
+    margin-left: 148px;
+    margin-top: -17px;
+    
 }
 .resetButton {
 	margin-left: 15px;
