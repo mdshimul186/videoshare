@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
   return { scripts: state.scripts };
 };
 
-const AllScriptsTable = ({ scriptToRender }) => {
+const AllScriptsTable = ({ scriptToRender,sendScript }) => {
   const scripts = scriptToRender;
 
   const AllScriptsList = scripts.map((script) => {
@@ -23,7 +23,7 @@ const AllScriptsTable = ({ scriptToRender }) => {
     return (
       <React.Fragment key={script._id}>
         <div className={`flex-row ${style.AllScriptTable}`}>
-          <p className={style.title}>{script.title}</p>
+          <p style={{cursor:"pointer"}} onClick={()=>sendScript(script)} className={style.title}>{script.title}</p>
           <p
             className={`${style.status} ${
               script.status === "RECORDED" ? style.statusRecorded : ""

@@ -1,45 +1,21 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./NewSummaryMain.module.css";
 import Select from "react-select";
 import VideoPreviewModal from "../../../modals/VideoPreviewModal/VideoPreviewModal";
 import ThemesModal from "../../../modals/ThemesModal/ThemesModal";
 import axios from 'axios'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { SpinnerComponent } from "react-element-spinner";
 
 
 const NewSummaryMain = ({
-	handleSelectValue,
-	DropdownIndicator,
-	customStyles,
-	newScriptOptions,
-	selectedOption,
+	selectedScript
 }) => {
-	const options = [
-		{ value: 'seles', label: 'Seles template' },
-		{ value: 'welcome', label: 'Welcome template' },
-		{ value: 'newsletter', label: 'News letter' }
-	  ]
+	const [options, setOptions] = useState([])
 
-	  
-	const [vpmModalIsOpen, setVpmModalIsOpen] = React.useState(false);
-	function vpmOpenModal() {
-		setVpmModalIsOpen(true);
-	}
 
-	function vpmCloseModal() {
-		setVpmModalIsOpen(false);
-	}
-	const [themeModalIsOpen, setThemeModalIsOpen] = useState(false);
-	const themeOpenModal = () => {
-		setThemeModalIsOpen(true);
-	};
-
-	const themeCloseModal = () => {
-		setThemeModalIsOpen(false);
-	};
-
+	const { scriptData } = useSelector(state => state.scripts)
 
 	const [title, setTitle] = useState("")
 	const [summary1, setSummary1] = useState("")
@@ -48,8 +24,19 @@ const NewSummaryMain = ({
 	const [isLoading, setLoading] = useState(false);
 	const dispatch = useDispatch()
 
+	const [id, setId] = useState(null)
+	const [summaryId, setSummaryId] = useState(null)
 
 
+	useEffect(() => {
+		if (selectedScript && selectedScript.category === 'summary') {
+			setId(selectedScript._id)
+			setSummaryId(selectedScript.summary[0]._id)
+			setTitle(selectedScript.title)
+			setSummary1(selectedScript.summary[0].options[0].value)
+			setSummary2(selectedScript.summary[0].options[1].value)
+		}
+	}, [selectedScript])
 
 
 	const handleSave = (type) => {
@@ -76,23 +63,74 @@ const NewSummaryMain = ({
 			status: type
 		}
 
-		axios.post(process.env.NEXT_PUBLIC_API_URL + "/script/createsummary", data)
-			.then(res => {
-				console.log(res.data.script)
-				setTitle("")
-				setSummary1("")
-				setSummary2("")
-				setLoading(false)
-				dispatch({
-					type: "ADD_NEW_SCRIPT",
-					payload: res.data.script
+		if (id && summaryId) {
+			axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/script/editsummary/${id}/${summaryId}`, data)
+				.then(res => {
+					setId(null)
+					setSummaryId(null)
+					setTitle("")
+					setSummary1("")
+					setSummary2("")
+					setLoading(false)
+					dispatch({
+						type: "ADD_EDITED_SCRIPT",
+						payload: res.data.script
+					})
 				})
-			})
-			.catch(err => {
-				console.log(err)
-				setLoading(false)
-			})
+				.catch(err => {
+					setLoading(false)
+				})
+		} else {
+			axios.post(process.env.NEXT_PUBLIC_API_URL + "/script/createsummary", data)
+				.then(res => {
+					setId(null)
+					setSummaryId(null)
+					setTitle("")
+					setSummary1("")
+					setSummary2("")
+					setLoading(false)
+					dispatch({
+						type: "ADD_NEW_SCRIPT",
+						payload: res.data.script
+					})
+				})
+				.catch(err => {
+					setLoading(false)
+				})
+		}
+
+
 	}
+
+	useEffect(() => {
+		if (scriptData) {
+			let temp = [...scriptData]
+			let filtered = temp.filter(data => data.category === 'summary')
+			setOptions(filtered)
+		}
+	}, [scriptData])
+
+	const handleSelect = (id) => {
+		if(id === 'default') {
+			setTitle('')
+			setSummary1('')
+			setSummary2('')
+			setId(null)
+			setSummaryId(null)
+		}else{
+			let temp = [...options]
+			let index = temp.findIndex(data => data._id === id)
+			let selectedTemp = temp[index]
+			setTitle(selectedTemp.title)
+			setSummary1(selectedTemp.summary[0].options[0].value)
+			setSummary2(selectedTemp.summary[0].options[1].value)
+			setId(null)
+			setSummaryId(null)
+		}
+		
+	}
+
+
 
 	return (
 		<div
@@ -120,7 +158,7 @@ const NewSummaryMain = ({
 						/> */}
 					</div>
 					<div className={styles.newSummaryContent}>
-						<div style={{width:"100%"}} className="flex-row">
+						<div style={{ width: "100%" }} className="flex-row">
 							<div style={{ marginBottom: "20px" }} className={styles.newSummaryInputGroup}>
 								<p style={{ marginBottom: "10px" }} className={styles.newSummaryName}>Summary Name</p>
 								<input
@@ -131,7 +169,18 @@ const NewSummaryMain = ({
 								></input>
 							</div>
 							<div className={styles.importTemp}>
-							<Select placeholder="import summary" options={options} />
+								{/* <Select placeholder="import summary" options={options} /> */}
+								<select className={styles.selectScript} onChange={(e) => handleSelect(e.target.value)}>
+								<option value='default'>Import summary</option>
+									{
+										options.map((op, index) => {
+											return (
+												<option value={op._id} key={index}>{op.title}</option>
+											)
+										})
+									}
+
+								</select>
 							</div>
 							{/* <div className={styles.newSummaryDuration}>
 								
@@ -170,15 +219,15 @@ const NewSummaryMain = ({
 								></input>
 							</div> */}
 							<div className={styles.recordAndDraftWrapper}>
-							<button className={styles.addBtn}><span style={{marginRight:"5px"}}>+</span>Add</button>
-							<div style={{display:"flex",width:"200px",justifyContent:"space-between",alignItems:"center"}}>
-							<p onClick={() => handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>
-							<button onClick={() => handleSave("saved")} className={styles.newScriptSave}>Save</button>
+								<button className={styles.addBtn}><span style={{ marginRight: "5px" }}>+</span>Add</button>
+								<div style={{ display: "flex", width: "200px", justifyContent: "space-between", alignItems: "center" }}>
+									<p onClick={() => handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>
+									<button onClick={() => handleSave("saved")} className={styles.newScriptSave}>Save</button>
+								</div>
+
 							</div>
-							
 						</div>
-						</div>
-						
+
 					</div>
 				</div>
 

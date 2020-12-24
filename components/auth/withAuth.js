@@ -48,14 +48,12 @@ const withAuth = (AuthComponent) => {
         .then((res) => {
           if (res.status === 200 && res.data.success) {
             //do some change state
-            console.log(res.data.user);
             this.setState({ userData: res.data.user });
             this.setState({ isLoading: false });
           }
         })
         .catch((err) => {
           Cookies.remove("videshare-token");
-          console.log(err.message);
           Router.push("/login");
         });
     }

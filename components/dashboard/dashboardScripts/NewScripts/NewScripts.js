@@ -25,10 +25,10 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const NewScripts = (props) => {
+const NewScripts = ({ setSelectedComponent,selectedScript }) => {
   const currentState = useSelector((state) => state);
   // eslint-disable-next-line react/prop-types
-  const { setSelectedComponent } = props;
+  //const { setSelectedComponent,selectedScript } = props;
 
   // eslint-disable-next-line no-unused-vars
   const { userData } = currentState.auth;
@@ -88,6 +88,7 @@ const NewScripts = (props) => {
               customStyles={DottedStyles}
               newScriptOptions={newScriptOptions}
               selectedOption={selectedOption}
+              selectedScript={selectedScript}
             />
           </div>
         </div>

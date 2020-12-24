@@ -153,6 +153,7 @@ const AllScripts = (props) => {
     nextPageButtonState,
     scriptsPerPage,
     handleSelectValue,
+    sendScript
   } = props;
   //initialize an empty array for us to store fetched data from the database
   const scriptsPerPageArr = [];
@@ -248,7 +249,7 @@ const AllScripts = (props) => {
               <p className={styles.AllScriptTableDate}>Date</p>
             </div>
             <div className={`${styles.divider} ${styles.scriptDivider}`}></div>
-            <AllScriptsTable scriptToRender={scriptToRender} />
+            <AllScriptsTable sendScript={sendScript} scriptToRender={scriptToRender} />
           </div>
         </div>
         <div className={`flex-row ${styles.AllScriptPaginationContainer}`}>

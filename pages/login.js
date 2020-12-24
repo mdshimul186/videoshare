@@ -112,7 +112,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
+     
         alert("failed login");
         setLoading(false);
       });

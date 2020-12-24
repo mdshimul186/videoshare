@@ -42,6 +42,14 @@ const scriptsReducer = (
 				  ...state,
 				  scriptData: [action.payload,...state.scriptData],
 				};
+		case "ADD_EDITED_SCRIPT":
+			let temp =[...state.scriptData]
+			let index = temp.findIndex(data=>data._id === action.payload._id)
+			temp[index] = action.payload
+				return {
+				  ...state,
+				  scriptData: [...temp],
+				};
 		case DASHBOARD_FETCH_SCRIPT:
 			return {
 				...state,

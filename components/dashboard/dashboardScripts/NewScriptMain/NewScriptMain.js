@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./NewScriptMain.module.css";
 import Select from "react-select";
 //https://www.npmjs.com/package/react-timer-hook
@@ -10,46 +10,13 @@ import NewScriptSmallEditor from "../NewScriptSmallEditor/NewScriptSmallEditor";
 import regeneratorRuntime from "regenerator-runtime";
 import axios from 'axios'
 import { SpinnerComponent } from "react-element-spinner";
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 
 
-const NewScriptMain = ({
-  // REACT SPEECH
-  handleRecording,
-  handleResetTranscript,
-  transcript,
-  // END REACT SPEECH
-  handleSelectValue,
-  customStyles,
-  newScriptOptions,
-  selectedOption,
-  isRecording,
-  stopRecording,
-}) => {
-  //STOPWATCH
-  const { seconds, minutes, hours, start, reset, pause } = useStopwatch();
-  //END STOPWATCH
-  const [isRecordMicOpen, setRecordMicOpen] = useState(false);
-  const [textFileData, setTextFileData] = useState(null);
-  const handleRecordMic = () => {
-    setRecordMicOpen(!isRecordMicOpen);
-  };
-  const handleResetAll = () => {
-    //reset();
-    //handleResetTranscript();
-  };
-  const handleTextFile = async (e) => {
-    console.log("fires");
-    e.preventDefault();
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const text = e.target.result;
-      console.log(text);
-      alert(text);
-      setTextFileData(text);
-    };
-    reader.readAsText(e.target.files[0]);
-  };
+const NewScriptMain = ({selectedScript}) => {
+ 
+
+const {scriptData} = useSelector(state=>state.scripts)
 
   const dispatch = useDispatch()
 
@@ -58,10 +25,12 @@ const NewScriptMain = ({
   const [note, setNote] = useState('')
   const [isLoading, setLoading] = useState(false);
 
+  const [id, setId] = useState(null)
+
 
 
   const handleScriptEditorChange = (e) => {
-		console.log("Content was updated:", e.target.getContent());
+		
 		setNote(e.target.getContent())
   };
   
@@ -75,29 +44,88 @@ const NewScriptMain = ({
       status:type,
       note
     }
-    axios.post(process.env.NEXT_PUBLIC_API_URL+'/script/createscript',data)
-    .then(res=>{
-      console.log(res.data.script)
-      dispatch({
-        type:"ADD_NEW_SCRIPT",
-        payload:res.data.script
+
+    if(id){
+      axios.post(process.env.NEXT_PUBLIC_API_URL+'/script/editscript/'+id,data)
+      .then(res=>{
+        dispatch({
+          type:"ADD_EDITED_SCRIPT",
+          payload:res.data.script
+        })
+        setId(null)
+        setNote("")
+        setTitle("")
+        setDescription("")
+        setLoading(false)
       })
-      setNote("")
-      setTitle("")
-      setDescription("")
-      setLoading(false)
-    })
-    .catch(err=>{
-      setLoading(false)
-      console.log(err)
-    })
+      .catch(err=>{
+        setLoading(false)
+      })
+    }else{
+      axios.post(process.env.NEXT_PUBLIC_API_URL+'/script/createscript',data)
+      .then(res=>{
+        dispatch({
+          type:"ADD_NEW_SCRIPT",
+          payload:res.data.script
+        })
+        setId(null)
+        setNote("")
+        setTitle("")
+        setDescription("")
+        setLoading(false)
+      })
+      .catch(err=>{
+        setLoading(false)
+      })
+    }
+    
   }
 
-  const options = [
-		{ value: 'seles', label: 'Seles template' },
-		{ value: 'welcome', label: 'Welcome template' },
-		{ value: 'newsletter', label: 'News letter' }
-	  ]
+  // const options = [
+	// 	{ value: 'seles', label: 'Seles template' },
+	// 	{ value: 'welcome', label: 'Welcome template' },
+	// 	{ value: 'newsletter', label: 'News letter' }
+  //   ]
+
+    const [options, setOptions] = useState([])
+    
+    useEffect(() => {
+      if(selectedScript && selectedScript.category === 'script'){
+        setId(selectedScript._id)
+        setTitle(selectedScript.title)
+        setDescription(selectedScript.description)
+        setNote(selectedScript.note)
+      }
+      
+    }, [selectedScript])
+
+
+    useEffect(() => {
+      if(scriptData){
+        let temp = [...scriptData]
+        let filtered = temp.filter(data=>data.category === 'script')
+        setOptions(filtered)
+      }
+    }, [scriptData])
+
+    const handleSelect=(id)=>{
+      if(id === 'default'){
+        setTitle('')
+        setDescription('')
+        setNote('')
+        setId(null)
+      }else{
+        let temp = [...options]
+        let index = temp.findIndex(data=>data._id === id)
+        let selectedTemp = temp[index]
+        setTitle(selectedTemp.title)
+        setDescription(selectedTemp.description)
+        setNote(selectedTemp.note)
+        setId(null)
+      }
+      
+    }
+   
 
   return (
     <div className={styles.newScript} id="#newScript">
@@ -139,7 +167,18 @@ const NewScriptMain = ({
             />
           </div>
           <div className={styles.importButton} >
-          <Select placeholder="import template" options={options} />
+          {/* <Select placeholder="import template" options={options} /> */}
+          <select className={styles.selectScript} onChange={(e)=>handleSelect(e.target.value)}>
+          <option value='default'>Import Script</option>
+          {
+            options.map((op,index)=>{
+              return(
+                <option value={op._id} key={index}>{op.title}</option>
+              )
+            })
+          }
+            
+          </select>
           </div>
          
           {/* <label className={styles.importButton}>
@@ -181,39 +220,12 @@ const NewScriptMain = ({
           </button> */}
           {/* <p className={styles.saveAsDraft}>Save as Draft</p> */}
         </div>
-        {isRecordMicOpen ? (
-          <RecordVoice
-            handleRecording={handleRecording}
-            handleResetTranscript={handleResetTranscript}
-            transcript={transcript}
-            isRecording={isRecording}
-            start={start}
-            pause={pause}
-            reset={reset}
-            seconds={seconds}
-            minutes={minutes}
-            hours={hours}
-            stopRecording={stopRecording}
-          />
-        ) : (
-          ""
-        )}
-        {isRecordMicOpen ? (
-          <NewScriptSmallEditor
-            reset={reset}
-            isRecording={isRecording}
-            transcript={transcript}
-            textFileData={textFileData}
-          />
-        ) : (
+         
           <NewScriptBigEditor
-            isRecording={isRecording}
-            transcript={transcript}
-            notevalue={note}
-            textFileData={textFileData}
             handleNewScriptEditorChange={handleScriptEditorChange}
+            notevalue={note}
           />
-        )}
+        
       </div>
       <div className={styles.recordAndDraftWrapper}>
         <p onClick={()=>handleSave("draft")} className={styles.saveAsDraft}>Save as draft</p>

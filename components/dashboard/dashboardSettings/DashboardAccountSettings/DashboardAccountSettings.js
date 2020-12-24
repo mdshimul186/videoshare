@@ -74,7 +74,7 @@ const DashboardAccountSettings = () => {
   };
 
   const handleChangePasswordClick = () => {
-    console.log("change password is clicked make changes in here");
+   
     setLoading(true);
 
     axios
@@ -120,7 +120,7 @@ const DashboardAccountSettings = () => {
   };
 
   const handleDiscardButton = () => {
-    console.log("discarded");
+ 
     setFirstNameValue(userData.firstName);
     setLastNameValue(userData.lastName);
     setEmailValue(userData.email);
@@ -129,7 +129,7 @@ const DashboardAccountSettings = () => {
   };
 
   const handleAccountSettingsChange = (e) => {
-    console.log("something changed");
+
     setDiscardActive(false);
     setSaveActive(true);
   };
@@ -241,7 +241,7 @@ const DashboardAccountSettings = () => {
         alert(`invalid password (attempts remaining:${numAttempts})`);
         setLoading(false);
       });
-    console.log("send");
+ 
   };
 
   const handleSaveAccountSettings = (e) => {

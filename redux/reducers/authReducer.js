@@ -42,17 +42,11 @@ const authReducer = (
 
     case "EDIT_USER_DATA":
       //refreshprops by re - assigning userData
-      Object.assign(state.userData, action.payload);
-      console.log(state);
+      //Object.assign(state.userData, action.payload);
+      //console.log(state);
       return {
         ...state,
-        userData: {
-          ...state.userData,
-          firstName: action.payload.firstname,
-          lastName: action.payload.lastname,
-          email: action.payload.email,
-          jobRole: action.payload.jobrole,
-        },
+        userData: action.payload
       };
     default:
       return { ...state };

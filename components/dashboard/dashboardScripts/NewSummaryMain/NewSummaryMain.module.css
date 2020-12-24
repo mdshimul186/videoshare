@@ -1221,3 +1221,20 @@ color: white;
     margin-top: 79px;
     
 }
+
+.selectScript{
+	width: 200px;
+	height: 42px;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.3px;
+    background: #FCFDFE;
+    opacity: 1;
+    outline: none;
+    border: 1px solid #C5C7CD;
+    padding-left: 15px;
+    border-radius: 8px;
+}

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AllScripts from "./AllScripts/AllScripts";
 import NewScripts from "./NewScripts/NewScripts";
 import NewSummaryMain from "./NewSummaryMain/NewSummaryMain";
+import NewScriptMain from "./NewScriptMain/NewScriptMain";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { dashboardFetchScript, changeTotalScripts } from "./scriptsAction";
@@ -47,14 +48,32 @@ const mapDispatchToProps = (dispatch) => {
  */
 
 const DashboardScripts = (props) => {
+
+  
+
+
   const currentState = useSelector((state) => state);
   const { USERID } = currentState.auth.userData;
   // eslint-disable-next-line no-undef
   const { API_LINK } = process.env;
   const [selectedComponent, setSelectedComponent] = useState(null);
-  console.log(selectedComponent);
+  const [selectedScript, setSelectedScript] = useState(null);
+  
 
   const [isLoading, setLoading] = useState(false);
+  const sendScript=(script)=>{
+    if(script.category === 'script'){
+      setSelectedComponent('Draft')
+    }else if(script.category === 'template'){
+      setSelectedComponent('Template')
+    }else if(script.category === 'summary'){
+      setSelectedComponent('Summary')
+    }
+    
+    setSelectedScript(script)
+    
+
+  }
 
   /**
    *
@@ -66,13 +85,11 @@ const DashboardScripts = (props) => {
       .get(process.env.NEXT_PUBLIC_API_URL + "/script/getmyscript")
       .then((response) => {
         const { data } = response;
-        console.log(data.script);
         props.dashboardFetchScript(data.script);
         props.changeTotalScripts(data.script.length);
         setLoading(false)
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false)
         return 400;
       });
@@ -145,7 +162,6 @@ const DashboardScripts = (props) => {
 
   const handleSelectValue = (selectedOption) => {
     const finalSelectedOption = selectedOption;
-    console.log(finalSelectedOption);
     setSelectedComponent(finalSelectedOption.value);
   };
   const DropdownIndicator = (props) => {
@@ -161,7 +177,33 @@ const DashboardScripts = (props) => {
   if (selectedComponent === "Draft") {
     return (
       <div id="Scripts">
-        <NewScripts setSelectedComponent={setSelectedComponent} />
+         <div className={styles.dashboardScriptsContent}>
+          <Header />
+          <div
+            onClick={() => setSelectedComponent(null)}
+            className={styles.backToScriptDashboardWrapper}
+          >
+            <img
+              className={styles.blueLeftArrow}
+              src="blueLeftArrow.svg"
+              alt="arrow"
+            />
+            <p className={styles.backToScriptDashboardText}>
+              Back to script dashboard
+            </p>
+          </div>
+          <div className={styles.newScriptWrapper}>
+            <NewScriptMain
+            selectedScript={selectedScript}
+              handleSelectValue={handleSelectValue}
+              DropdownIndicator={DropdownIndicator}
+              customStyles={DottedStyles}
+              newScriptOptions={newScriptOptions}
+              selectedOption={selectedOption}
+              setSelectedComponent={setSelectedComponent}
+            />
+          </div>
+        </div>
       </div>
     );
   }
@@ -185,6 +227,7 @@ const DashboardScripts = (props) => {
           </div>
           <div className={styles.newScriptWrapper}>
             <NewTemplateMain
+            selectedScript={selectedScript}
               handleSelectValue={handleSelectValue}
               DropdownIndicator={DropdownIndicator}
               customStyles={DottedStyles}
@@ -218,6 +261,7 @@ const DashboardScripts = (props) => {
           </div>
           <div className={styles.newScriptWrapper}>
             <NewSummaryMain
+            selectedScript={selectedScript}
               handleSelectValue={handleSelectValue}
               DropdownIndicator={DropdownIndicator}
               customStyles={DottedStyles}
@@ -246,6 +290,7 @@ const DashboardScripts = (props) => {
         maxScriptPerPage={maxScriptPerPage}
         setSelectedComponent={setSelectedComponent}
         handleSelectValue={handleSelectValue}
+        sendScript={sendScript}
       />
     </div>
   );
